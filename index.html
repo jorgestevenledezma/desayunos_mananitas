@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Desayunos Mañanitas - Sorprende a tus seres queridos con desayunos y brunch a domicilio en Cali. Cajas decorativas, waffles, frutas frescas y más.">
+<meta name="keywords" content="desayunos sorpresa Cali, brunch a domicilio, regalos desayuno, desayunos personalizados, Desayunos Mañanitas">
+<title>Desayunos Mañanitas | Desayunos Sorpresa a Domicilio en Cali</title>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Desayunos Mañanitas",
+  "description": "Desayunos sorpresa y brunch a domicilio en Cali, Colombia",
+  "areaServed": ["Cali", "Jamundí", "Ciudad del Campo"],
+  "priceRange": "$60.000 - $320.000 COP"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink-deep: #c4507a;
+  --pink-main: #e8829e;
+  --pink-soft: #f2a6bc;
+  --pink-light: #fce4ec;
+  --pink-pale: #fef2f5;
+  --pink-cream: #fff8fa;
+  --gold: #c9a96e;
+  --gold-light: #e8d5a8;
+  --text-dark: #3a2434;
+  --text-body: #5c3d4e;
+  --text-light: #8a6578;
+  --white: #ffffff;
+  --shadow-soft: 0 4px 20px rgba(196,80,122,0.1);
+  --shadow-card: 0 8px 32px rgba(196,80,122,0.12);
+  --shadow-hover: 0 12px 40px rgba(196,80,122,0.2);
+  --radius: 20px;
+  --radius-sm: 12px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--text-body);
+  background: var(--pink-cream);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatUp {
+  from { opacity:0; transform: translateY(40px); }
+  to { opacity:1; transform: translateY(0); }
+}
+@keyframes floatIn {
+  from { opacity:0; transform: scale(0.95) translateY(20px); }
+  to { opacity:1; transform: scale(1) translateY(0); }
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes bobble {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes sparkle {
+  0%,100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+.sparkle-dot {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,248,250,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,130,158,0.15);
+  transition: all 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(255,248,250,0.95);
+  box-shadow: 0 2px 20px rgba(196,80,122,0.1);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.nav-logo:hover { transform: rotate(10deg) scale(1.05); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--pink-main);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--pink-deep); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-deep));
+  color: white !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(196,80,122,0.3);
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196,80,122,0.4);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.mobile-toggle span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text-dark);
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(170deg, var(--pink-cream) 0%, var(--pink-pale) 40%, var(--pink-light) 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(232,130,158,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,169,110,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+.hero-logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin-bottom: 32px;
+  animation: floatIn 1s ease-out, bobble 4s ease-in-out 1s infinite;
+  box-shadow: 0 10px 40px rgba(196,80,122,0.2);
+}
+.hero-tagline {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: var(--pink-deep);
+  margin-bottom: 12px;
+  animation: floatUp 0.8s ease-out 0.2s both;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 24px;
+  animation: floatUp 0.8s ease-out 0.4s both;
+  line-height: 1.5;
+}
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 550px;
+  margin: 0 auto 40px;
+  animation: floatUp 0.8s ease-out 0.6s both;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: floatUp 0.8s ease-out 0.8s both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-deep));
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 25px rgba(196,80,122,0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(196,80,122,0.45);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: var(--pink-deep);
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid var(--pink-soft);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-secondary:hover {
+  background: var(--pink-pale);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===== FEATURES BAR ===== */
+.features-bar {
+  background: white;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(232,130,158,0.1);
+  border-bottom: 1px solid rgba(232,130,158,0.1);
+}
+.features-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  text-align: center;
+}
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+.feature-label {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+.feature-desc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+/* ===== SECTION COMMON ===== */
+section {
+  padding: 80px 24px;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.section-label {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--pink-main);
+  margin-bottom: 4px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+.section-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* ===== CATALOG ===== */
+.catalog { background: var(--pink-pale); }
+
+/* Filter tabs */
+.catalog-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.filter-btn {
+  padding: 10px 24px;
+  border: 2px solid var(--pink-soft);
+  border-radius: 50px;
+  background: white;
+  color: var(--text-body);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-deep));
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(196,80,122,0.25);
+}
+
+/* Product cards grid */
+.catalog-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.product-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(201,169,110,0.3);
+}
+
+.card-visual {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+.card-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.card-emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.card-body {
+  padding: 24px;
+}
+.card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.card-includes {
+  margin-bottom: 16px;
+}
+.card-includes p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.card-includes p::before {
+  content: '✦';
+  color: var(--pink-main);
+  font-size: 0.7rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.card-decoration {
+  padding: 12px 16px;
+  background: var(--pink-pale);
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+.card-decoration p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--pink-light);
+}
+.card-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+}
+.card-price-note {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+.card-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+}
+.card-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37,211,102,0.4);
+}
+
+/* ===== DELIVERY ===== */
+.delivery {
+  background: white;
+}
+.delivery-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.delivery-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.delivery-card {
+  background: var(--pink-pale);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.delivery-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+.delivery-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.delivery-city {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.delivery-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+}
+.delivery-note {
+  text-align: center;
+  background: linear-gradient(135deg, var(--pink-light), var(--pink-pale));
+  padding: 20px 32px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+/* ===== ABOUT ===== */
+.about {
+  background: linear-gradient(170deg, var(--pink-cream) 0%, var(--pink-pale) 100%);
+}
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--text-body);
+  margin-bottom: 24px;
+}
+.about-text strong {
+  color: var(--pink-deep);
+}
+.about-extras {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+.extra-chip {
+  background: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-body);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s;
+}
+.extra-chip:hover {
+  transform: translateY(-2px);
+  background: var(--pink-light);
+}
+
+/* ===== CTA FINAL ===== */
+.cta-section {
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-deep));
+  text-align: center;
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cta-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: white;
+  margin-bottom: 16px;
+}
+.cta-desc {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: var(--pink-deep);
+  padding: 18px 42px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--text-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 48px 24px 32px;
+  text-align: center;
+}
+.footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.footer-brand {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: var(--pink-soft);
+  margin-bottom: 12px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--pink-soft); }
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+.footer-social a:hover {
+  background: var(--pink-main);
+  transform: translateY(-3px);
+}
+.footer-copy {
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px; height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+  z-index: 999;
+  transition: all 0.3s;
+  animation: pulse 2s ease-in-out infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: white;
+    padding: 24px;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-logo {
+    width: 120px; height: 120px;
+  }
+  .card-visual { height: 140px; }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--pink-pale); }
+::-webkit-scrollbar-thumb { background: var(--pink-soft); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--pink-main); }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#"><img src="unnamed__1_.png" alt="Desayunos Mañanitas" class="nav-logo"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#envios">Envíos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="https://wa.me/573001234567?text=Hola%20%F0%9F%90%B0%20Quiero%20hacer%20un%20pedido" class="nav-cta" target="_blank">🐰 Pedir Ahora</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="unnamed__1_.png" alt="Logo Desayunos Mañanitas" class="hero-logo">
+    <h1 class="hero-tagline">Desayunos Mañanitas</h1>
+    <p class="hero-title">Sorprende a quien más quieres con un desayuno <em>mágico</em> a domicilio</p>
+    <p class="hero-subtitle">Desayunos y brunch artesanales, preparados con amor e ingredientes frescos. Entregamos la sorpresa perfecta en Cali y alrededores.</p>
+    <div class="hero-buttons">
+      <a href="#catalogo" class="btn-primary">🎁 Ver Catálogo</a>
+      <a href="https://wa.me/573001234567?text=Hola%20%F0%9F%90%B0%20Quiero%20información%20sobre%20los%20desayunos" class="btn-secondary" target="_blank">💬 Escríbenos</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES BAR -->
+<div class="features-bar">
+  <div class="features-grid">
+    <div class="feature-item fade-up">
+      <div class="feature-icon">🌅</div>
+      <div class="feature-label">Entrega Temprana</div>
+      <div class="feature-desc">Desde las 5:30 a.m.</div>
+    </div>
+    <div class="feature-item fade-up">
+      <div class="feature-icon">🍳</div>
+      <div class="feature-label">Ingredientes Frescos</div>
+      <div class="feature-desc">Preparados con amor</div>
+    </div>
+    <div class="feature-item fade-up">
+      <div class="feature-icon">🎀</div>
+      <div class="feature-label">Personalizado</div>
+      <div class="feature-desc">Tarjetas y decoración</div>
+    </div>
+    <div class="feature-item fade-up">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-label">A Domicilio</div>
+      <div class="feature-desc">Cali, Jamundí y más</div>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section class="catalog" id="catalogo">
+  <div class="section-header fade-up">
+    <div class="section-label">Nuestro Menú</div>
+    <h2 class="section-title">Elige el Desayuno Perfecto</h2>
+    <p class="section-desc">Desde opciones clásicas hasta brunch premium con vino y rosas. Cada caja es una experiencia única.</p>
+  </div>
+
+  <div class="catalog-filters fade-up">
+    <button class="filter-btn active" onclick="filterProducts('all')">✨ Todos</button>
+    <button class="filter-btn" onclick="filterProducts('economico')">💰 Hasta $100K</button>
+    <button class="filter-btn" onclick="filterProducts('medio')">🎀 $100K - $200K</button>
+    <button class="filter-btn" onclick="filterProducts('premium')">👑 Premium +$200K</button>
+  </div>
+
+  <div class="catalog-grid" id="catalogGrid">
+
+    <!-- Mini Box -->
+    <div class="product-card fade-up" data-category="economico">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);"></div>
+        <div class="card-emoji">📦</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Mini Box</h3>
+        <div class="card-includes">
+          <p>Café en leche</p>
+          <p>2 rollitos con jamón, queso mozzarella y ranchera</p>
+          <p>4 waffles con fruta y sirope</p>
+          <p>1 cupcake</p>
+          <p>Caja decorativa y tarjeta personalizada</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Cinta decorativa con tarjeta alusiva + decoración según la ocasión</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$60.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20el%20Mini%20Box%20($60.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Brunch -->
+    <div class="product-card fade-up" data-category="economico">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fde2e4, #fad2e1, #dfe7fd);"></div>
+        <div class="card-emoji">🥐</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Mini Brunch</h3>
+        <div class="card-includes">
+          <p>2 rollos de tortilla con jamón, queso mozzarella y miel</p>
+          <p>Bebida natural o caliente</p>
+          <p>Parfait de yogurt griego con granola y frutas</p>
+          <p>2 mini chocolates Hershey's</p>
+          <p>2 globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Caja decorativa en acetato + tarjeta personalizada</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$85.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20el%20Mini%20Brunch%20($85.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Le Petit Brunch -->
+    <div class="product-card fade-up" data-category="economico">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #f8e8ee, #e8d5e0, #fce4ec);"></div>
+        <div class="card-emoji">🧇</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Le Petit Brunch</h3>
+        <div class="card-includes">
+          <p>Omelette con maíz tierno, jamón y vegetales</p>
+          <p>Bebida natural y caliente</p>
+          <p>3 waffles con fresa, arándanos y chocolate</p>
+          <p>Cupcake + bowl de frutas con yogurt griego</p>
+          <p>Caja de madera + 2 globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Caja de madera decorativa + tarjeta personalizada</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$100.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Le%20Petit%20Brunch%20($100.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Royal Brunch -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fce4ec, #e1bee7, #f3e5f5);"></div>
+        <div class="card-emoji">👑</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Royal Brunch</h3>
+        <div class="card-includes">
+          <p>Sándwich croissant con jamón de pavo y queso Gouda</p>
+          <p>Bebida natural y caliente</p>
+          <p>Bowl de frutas + waffles con fresa y arándanos</p>
+          <p>Parfait de yogurt griego en copa de cristal</p>
+          <p>Ramillete de astromelias + 3 globos</p>
+        </div>
+        <div class="card-decoration">
+          <p>🌸 Bandeja de madera con mantelito de satín + astromelias</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$140.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Royal%20Brunch%20($140.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Golden Brunch -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2, #ffcc80);"></div>
+        <div class="card-emoji">✨</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Golden Brunch</h3>
+        <div class="card-includes">
+          <p>Wrap con huevitos, queso Gouda y jamón de pavo</p>
+          <p>Waffles con fresas, arándanos y chocolate Hershey's</p>
+          <p>Bebida natural o caliente + bowl de frutas</p>
+          <p>Cupcake</p>
+          <p>Caja de madera + 2 globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Caja de madera + tarjeta personalizada</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$150.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Golden%20Brunch%20($150.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Chic -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0, #e8b4c8);"></div>
+        <div class="card-emoji">💎</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Chic</h3>
+        <div class="card-includes">
+          <p>Wrap con jamón premium, queso Gouda y dip de la casa</p>
+          <p>Bebida natural + capuchino de vainilla o avellana</p>
+          <p>Bowl de frutas + parfait en copa de cristal</p>
+          <p>Mini torta vintage + waffles + cajita de alfajores</p>
+          <p>Ramillete de astromelias + 3 globos</p>
+        </div>
+        <div class="card-decoration">
+          <p>🌸 Bandeja de madera con satín + astromelias frescas</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$170.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Chic%20($170.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Encantador -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #f3e5f5, #e1bee7, #ce93d8);"></div>
+        <div class="card-emoji">💜</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Encantador</h3>
+        <div class="card-includes">
+          <p>Sándwich o wrap con jamón y queso + dip de la casa</p>
+          <p>Waffles con fresas, arándanos y sirope</p>
+          <p>Bowl de charcutería en cerámica de corazón</p>
+          <p>Parfait en copa de cristal + bowl de frutas</p>
+          <p>Bebida natural y caliente</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Bandeja de madera con mantelito de satín + globos en helio</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$170.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Encantador%20($170.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Oliva -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9, #a5d6a7);"></div>
+        <div class="card-emoji">🫒</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Oliva</h3>
+        <div class="card-includes">
+          <p>Wrap de huevitos con jamón, queso holandés y maicitos</p>
+          <p>Bebida natural y caliente</p>
+          <p>Parfait en copa de cristal + waffles con chocolate</p>
+          <p>Bowl de frutas + cajita de alfajores</p>
+          <p>Caja de madera con mantel de satín</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Caja de madera elegante + globos en helio</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$175.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Oliva%20($175.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- La Vie en Brunch -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-badge">🇨🇴 Criollo</div>
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #efebe9, #d7ccc8, #bcaaa4);"></div>
+        <div class="card-emoji">🍳</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">La Vie en Brunch</h3>
+        <div class="card-includes">
+          <p>Cazuela con calentado, tortilla, chicharrón y rancheras</p>
+          <p>Bowl de charcutería con salami, peperoni y quesitos</p>
+          <p>Mix de frutas + bebida natural y caliente</p>
+          <p>Vaso mug personalizado</p>
+          <p>Bandeja de madera con mantelito de satín</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Mug personalizado + globos en helio + tarjeta</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$175.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20La%20Vie%20en%20Brunch%20($175.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Violet -->
+    <div class="product-card fade-up" data-category="medio">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #e8d5f5, #d1a8e8, #c693db);"></div>
+        <div class="card-emoji">💐</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Violet</h3>
+        <div class="card-includes">
+          <p>Sándwich o wrap con jamón, queso y dip de la casa</p>
+          <p>Waffles + bowl charcutería en corazón de cerámica</p>
+          <p>Parfait en copa de cristal + bowl de frutas</p>
+          <p>Cupcake + bebida natural y caliente</p>
+          <p>Ramillete de rosas + 3 globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🌹 Ramillete de rosas + bandeja de madera con satín</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$180.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Violet%20($180.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Clasicc -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-badge">⭐ Popular</div>
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fce4ec, #f48fb1, #ec407a);"></div>
+        <div class="card-emoji">🌹</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Clasicc</h3>
+        <div class="card-includes">
+          <p>Sándwich de croissant con jamón de pavo y queso Gouda</p>
+          <p>Bowl de frutas + waffles con arándanos y sirope</p>
+          <p>Cajita de alfajores + parfait premium</p>
+          <p>Bebida natural o caliente</p>
+          <p>Ramillete de 20-25 rosas + globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🌹 20-25 rosas + caja de madera con satín</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$220.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Clasicc%20($220.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Je t'aime -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-badge">💕 Romántico</div>
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fde2e4, #e2ece9, #fad2e1);"></div>
+        <div class="card-emoji">🥂</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Je t'aime</h3>
+        <div class="card-includes">
+          <p>Sándwich de bagel artesanal con arándanos y jamón de pavo</p>
+          <p>Omelette con pollo, maíz y queso en plato de cerámica</p>
+          <p>Waffles + parfait + tortera de alfajores</p>
+          <p>Botella de vino rosado + portarretrato</p>
+          <p>Opcional: torta personal</p>
+        </div>
+        <div class="card-decoration">
+          <p>🥂 Vino rosado + portarretrato + globos en helio</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$230.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Je%20t'aime%20($230.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Chérie -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fff0f3, #ffccd5, #ff8fa3);"></div>
+        <div class="card-emoji">🍷</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Chérie</h3>
+        <div class="card-includes">
+          <p>Wrap de huevitos, jamón, queso y vegetales en microcerámica</p>
+          <p>Bol de corazón con mix de frutas frescas</p>
+          <p>Bebida natural o caliente + vino rosado</p>
+          <p>Torta Vintage</p>
+          <p>4 globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎀 Bandeja redonda elegante con mantelito + tarjeta</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$240.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Chérie%20($240.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch para Él -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-badge">🧔 Para Él</div>
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9);"></div>
+        <div class="card-emoji">💪</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch para Él</h3>
+        <div class="card-includes">
+          <p>2 wraps de pollo, jamón y queso con dip de la casa</p>
+          <p>Bowl de charcutería premium con variedad de quesos</p>
+          <p>Waffles con arándanos y chocolate + parfait + cupcake</p>
+          <p>Bebida natural o caliente + té Hatsu</p>
+          <p>Vaso termo de acero inoxidable</p>
+        </div>
+        <div class="card-decoration">
+          <p>🎁 Vaso termo premium + bandeja de madera + globos</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$240.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20para%20Él%20($240.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch La Favorite -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f06292);"></div>
+        <div class="card-emoji">🎂</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch La Favorite</h3>
+        <div class="card-includes">
+          <p>Omelette con queso ricotta, salami y vegetales + croissant</p>
+          <p>Bowl de charcutería en cerámica de corazón premium</p>
+          <p>Waffles con frutas + mini torta vintage coquette</p>
+          <p>Parfait premium en copa de cristal</p>
+          <p>Ramillete de 20-25 rosas + globos en helio</p>
+        </div>
+        <div class="card-decoration">
+          <p>🌹 20-25 rosas + mini torta coquette + caja de madera</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$245.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20La%20Favorite%20($245.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Premium -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #4a1942, #8b1a4a, #c2185b);"></div>
+        <div class="card-emoji">🍾</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Premium</h3>
+        <div class="card-includes">
+          <p>Baguette artesanal con arándanos, jamón de pavo y Gouda</p>
+          <p>Omelette con especias en vitrocerámica con tapa de cristal</p>
+          <p>Waffles con fresas + parfait + cajita de alfajores</p>
+          <p>Botella de vino tinto + portarretrato</p>
+          <p>Mesa de madera con mantel de satín</p>
+        </div>
+        <div class="card-decoration">
+          <p>🍷 Vino tinto + portarretrato + globos en helio</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$245.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Premium%20($245.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Coquette -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-badge">🏆 Exclusivo</div>
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #880e4f, #ad1457, #c62828);"></div>
+        <div class="card-emoji">🌹</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Coquette</h3>
+        <div class="card-includes">
+          <p>Wrap en cerámica con maicitos, jamón y huevitos</p>
+          <p>Waffles con sirope y frutas + bol de corazón con frutas</p>
+          <p>Parfait con mermelada artesanal + alfajor</p>
+          <p>Pocillo con hojaldre de corazón + pulserita artesanal</p>
+          <p>Bandeja decorativa de lujo</p>
+        </div>
+        <div class="card-decoration">
+          <p>🌹 Rosas rojas + pulserita artesanal + bandeja de lujo</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$290.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Coquette%20($290.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brunch Je t'aime XL -->
+    <div class="product-card fade-up" data-category="premium">
+      <div class="card-badge">👑 Top</div>
+      <div class="card-visual">
+        <div class="card-gradient" style="background: linear-gradient(135deg, #c9a96e, #e8d5a8, #c9a96e);"></div>
+        <div class="card-emoji">👑</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">Brunch Je t'aime XL</h3>
+        <div class="card-includes">
+          <p>Bagel artesanal + omelette en plato de cerámica con cristal</p>
+          <p>Waffles con chocolate + parfait + tortera de alfajores</p>
+          <p>Botella de vino rosado + portarretrato</p>
+          <p>Opcional: torta personal</p>
+          <p>Mesa de madera con mantelito + globos</p>
+        </div>
+        <div class="card-decoration">
+          <p>👑 La experiencia más completa y lujosa</p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">$320.000</div>
+            <span class="card-price-note">+ domicilio</span>
+          </div>
+          <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20pedir%20Brunch%20Je%20t'aime%20XL%20($320.000)" class="card-order" target="_blank">📲 Pedir</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="delivery" id="envios">
+  <div class="section-header fade-up">
+    <div class="section-label">Entregas</div>
+    <h2 class="section-title">Horarios y Domicilios</h2>
+    <p class="section-desc">Entregamos desde las 5:30 a.m. hasta las 11:00 a.m. para que tu sorpresa llegue en el momento perfecto.</p>
+  </div>
+  <div class="delivery-container">
+    <div class="delivery-cards fade-up">
+      <div class="delivery-card">
+        <div class="delivery-icon">🏙️</div>
+        <div class="delivery-city">Cali</div>
+        <div class="delivery-price">$10.000</div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-icon">🏘️</div>
+        <div class="delivery-city">Ciudad del Campo</div>
+        <div class="delivery-price">$18.000</div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-icon">🌿</div>
+        <div class="delivery-city">Jamundí</div>
+        <div class="delivery-price">$30.000</div>
+      </div>
+    </div>
+    <div class="delivery-note fade-up">
+      📌 Los costos pueden variar según la ubicación exacta. Consulta disponibilidad antes de realizar tu pedido.
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="section-header fade-up">
+    <div class="section-label">Sobre Nosotros</div>
+    <h2 class="section-title">Cada Mañana es Especial</h2>
+  </div>
+  <div class="about-content fade-up">
+    <p class="about-text">
+      En <strong>Desayunos Mañanitas</strong>, creemos que cada mañana es una oportunidad para sorprender y llenar de amor a quienes más quieres.
+    </p>
+    <p class="about-text">
+      Nuestros desayunos son preparados con <strong>ingredientes frescos</strong> y de la más alta calidad, cuidando cada detalle para ofrecerte una experiencia única y deliciosa.
+    </p>
+    <p class="about-text" style="font-style:italic; color: var(--pink-deep);">
+      Personaliza tu sorpresa añadiendo extras como flores, chocolates, pulseras artesanales o un mensaje especial.
+    </p>
+    <div class="about-extras">
+      <div class="extra-chip">🌹 Flores</div>
+      <div class="extra-chip">🍫 Chocolates</div>
+      <div class="extra-chip">📝 Tarjetas</div>
+      <div class="extra-chip">📿 Pulseras</div>
+      <div class="extra-chip">🎈 Globos</div>
+      <div class="extra-chip">🍷 Vinos</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title fade-up">Haz tu pedido hoy</h2>
+  <p class="cta-desc fade-up">Regala una mañana llena de amor. Escríbenos por WhatsApp y cuéntanos qué desayuno quieres.</p>
+  <a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20hacer%20un%20pedido%20de%20Desayunos%20Mañanitas" class="cta-btn fade-up" target="_blank">
+    💬 Pedir por WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Desayunos Mañanitas</div>
+    <p>Desayunos sorpresa a domicilio en Cali 🐰</p>
+    <div class="footer-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#envios">Envíos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="https://wa.me/573001234567" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/desayunosmananitas/" target="_blank" aria-label="Instagram">📸</a>
+      <a href="https://wa.me/573001234567" target="_blank" aria-label="WhatsApp">💬</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Desayunos Mañanitas. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/573001234567?text=Hola%20🐰%20Quiero%20información" class="whatsapp-float" target="_blank" aria-label="Chat por WhatsApp">
+  💬
+</a>
+
+<script>
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// Intersection Observer for animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Product filter
+function filterProducts(category) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  document.querySelectorAll('.product-card').forEach(card => {
+    const cat = card.dataset.category;
+    if (category === 'all' || cat === category) {
+      card.style.display = '';
+      card.style.animation = 'floatIn 0.5s ease-out forwards';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
