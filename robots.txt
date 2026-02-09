@@ -1,0 +1,19 @@
+# Robots.txt - Desayunos Mañanitas
+# https://www.desayunosmananitas.com
+
+User-agent: *
+Allow: /
+Disallow: /img/favicon.ico
+
+# Sitemap
+Sitemap: https://www.desayunosmananitas.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
