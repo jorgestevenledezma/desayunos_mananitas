@@ -99,11 +99,10 @@ body {
   justify-content: space-between;
 }
 .nav-logo {
-  height: 50px;
-  border-radius: 50%;
+  height: 45px;
   transition: transform 0.3s;
 }
-.nav-logo:hover { transform: rotate(10deg) scale(1.05); }
+.nav-logo:hover { transform: scale(1.05); }
 .nav-links {
   display: flex;
   gap: 32px;
@@ -195,8 +194,8 @@ body {
   max-width: 800px;
 }
 .hero-logo {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   margin-bottom: 32px;
   animation: floatIn 1s ease-out, bobble 4s ease-in-out 1s infinite;
@@ -737,7 +736,7 @@ footer {
     grid-template-columns: 1fr;
   }
   .hero-logo {
-    width: 120px; height: 120px;
+    width: 180px; height: 180px;
   }
   .card-visual { height: 140px; }
 }
