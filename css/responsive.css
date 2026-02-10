@@ -1,0 +1,69 @@
+/* ===== SEASONAL BANNER MOBILE ===== */
+@media (max-width: 768px) {
+  .seasonal-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .seasonal-info {
+    text-align: center;
+  }
+  .seasonal-countdown {
+    justify-content: center;
+  }
+  .seasonal-emoji {
+    font-size: 2.5rem;
+  }
+}
+
+/* ===== HOW IT WORKS MOBILE ===== */
+@media (max-width: 768px) {
+  .steps-grid {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .step-connector {
+    transform: rotate(90deg);
+    padding: 0;
+  }
+  .step-card {
+    max-width: 100%;
+  }
+}
+
+/* ===== INSTAGRAM MOBILE ===== */
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .insta-content p {
+    display: none;
+  }
+  .insta-content .insta-emoji {
+    font-size: 2rem;
+  }
+}
+
+/* ===== GENERAL MOBILE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: white;
+    padding: 24px;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-logo {
+    width: 180px; height: 180px;
+  }
+  .card-visual { height: 140px; }
+}
