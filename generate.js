@@ -92,22 +92,7 @@ function buildHTML(product, related, photos) {
       💬 Pedir por WhatsApp
     </a>
   </div>
-
-  ${photos.length > 1 ? `
-  <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Anterior">‹</button>
-  <button class="hero-arrow hero-next" id="heroNext" aria-label="Siguiente">›</button>
-  <div class="hero-counter"><span id="heroIdx">1</span> / ${photos.length}</div>` : ''}
-</section>
-
-${photos.length > 1 ? `
-<div class="photo-strip" id="photoStrip">
-  <div class="photo-strip-inner">
-    ${photos.map((p, i) => `
-    <button class="strip-thumb ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="Foto ${i + 1}">
-      <img src="img/${p}" alt="${product.name} foto ${i + 1}" loading="lazy">
-    </button>`).join('')}
-  </div>
-</div>` : ''}` :
+</section>` :
 
 `<section class="product-hero product-hero--gradient">
   <div class="product-hero-bg" style="background:${product.gradient};background-size:400% 400%;"></div>
@@ -146,7 +131,32 @@ ${photos.length > 1 ? `
   window.GALLERY_NAME   = "${product.name}";
 </script>` : '';
 
-  const galleryHTML = ''; // integrado en heroHTML
+  // ── Galería en el cuerpo de la página ───────────────────────
+  const galleryHTML = hasPhotos ? `
+<section class="product-gallery">
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <div class="gallery-label">Fotografías</div>
+      <h2 class="gallery-title">Así llega tu desayuno</h2>
+    </div>
+
+    <div class="gallery-main" id="galleryMain">
+      <img src="img/${photos[0]}" alt="${product.name}" class="gallery-main-img" id="galleryMainImg" loading="lazy">
+      ${photos.length > 1 ? `
+      <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Anterior">‹</button>
+      <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Siguiente">›</button>
+      <div class="gallery-counter"><span id="galleryIdx">1</span> / ${photos.length}</div>` : ''}
+    </div>
+
+    ${photos.length > 1 ? `
+    <div class="gallery-thumbs">
+      ${photos.map((p, i) => `
+      <button class="gallery-thumb ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="Foto ${i + 1}">
+        <img src="img/${p}" alt="${product.name} foto ${i + 1}" loading="lazy">
+      </button>`).join('')}
+    </div>` : ''}
+  </div>
+</section>` : '';
 
 
   const relatedHTML = related.map(r => {

@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        // Delay escalonado para listas
         if (el.tagName === 'LI') {
           const siblings = el.parentElement.querySelectorAll('li');
           const idx = Array.from(siblings).indexOf(el);
@@ -66,9 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Confetti de corazones al cargar ─────────────────────────
   const confettiColors = ['#e8829e', '#c4507a', '#c9a96e', '#f48fb1', '#ffffff'];
   const confettiSymbols = ['♥', '✦', '✿', '★', '♡'];
-  const count = 20;
 
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < 20; i++) {
     setTimeout(() => {
       const el = document.createElement('span');
       el.className = 'confetti-piece';
@@ -99,56 +97,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Galería integrada en hero ────────────────────────────────
+  // ── Ken Burns en la foto del hero ────────────────────────────
+  const heroBg = document.getElementById('heroBg');
+  heroBg && setTimeout(() => heroBg.classList.add('zooming'), 100);
+
+  // ── Galería en el cuerpo ─────────────────────────────────────
   const photos = window.GALLERY_PHOTOS || [];
   if (photos.length === 0) return;
 
-  const heroBg    = document.getElementById('heroBg');
-  const heroIdx   = document.getElementById('heroIdx');
-  const stripThumbs = document.querySelectorAll('.strip-thumb');
-  const lightbox  = document.getElementById('galleryLightbox');
-  const lbImg     = document.getElementById('lightboxImg');
-  const lbOverlay = document.getElementById('lightboxOverlay');
-  const lbClose   = document.getElementById('lightboxClose');
-  const lbPrev    = document.getElementById('lightboxPrev');
-  const lbNext    = document.getElementById('lightboxNext');
-  const heroPrev  = document.getElementById('heroPrev');
-  const heroNext  = document.getElementById('heroNext');
+  const galleryMain    = document.getElementById('galleryMain');
+  const galleryMainImg = document.getElementById('galleryMainImg');
+  const galleryIdx     = document.getElementById('galleryIdx');
+  const galleryPrev    = document.getElementById('galleryPrev');
+  const galleryNext    = document.getElementById('galleryNext');
+  const thumbs         = document.querySelectorAll('.gallery-thumb');
+  const lightbox       = document.getElementById('galleryLightbox');
+  const lbImg          = document.getElementById('lightboxImg');
+  const lbOverlay      = document.getElementById('lightboxOverlay');
+  const lbClose        = document.getElementById('lightboxClose');
+  const lbPrev         = document.getElementById('lightboxPrev');
+  const lbNext         = document.getElementById('lightboxNext');
 
   let current = 0;
 
   function goTo(idx) {
     current = (idx + photos.length) % photos.length;
-    // Cambia fondo del hero con fade
-    if (heroBg) {
-      heroBg.style.opacity = '0';
+
+    if (galleryMainImg) {
+      galleryMainImg.style.opacity = '0';
       setTimeout(() => {
-        heroBg.style.backgroundImage = `url('${photos[current]}')`;
-        heroBg.style.opacity = '1';
-      }, 200);
+        galleryMainImg.src = photos[current];
+        galleryMainImg.style.opacity = '1';
+      }, 150);
     }
-    if (heroIdx)  heroIdx.textContent = current + 1;
-    if (lbImg)    lbImg.src = photos[current];
-    stripThumbs.forEach((t, i) => {
+
+    if (galleryIdx) galleryIdx.textContent = current + 1;
+    if (lbImg)      lbImg.src = photos[current];
+
+    thumbs.forEach((t, i) => {
       t.classList.toggle('active', i === current);
       if (i === current) t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     });
   }
 
-  // Añadir transición al fondo
-  if (heroBg) heroBg.style.transition = 'opacity 0.2s ease, transform 6s ease';
+  // Transición suave en la imagen principal
+  if (galleryMainImg) galleryMainImg.style.transition = 'opacity 0.15s ease';
 
-  // Strip de miniaturas
-  stripThumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.idx)));
+  // Miniaturas
+  thumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.idx)));
 
-  // Flechas del hero
-  heroPrev && heroPrev.addEventListener('click', () => goTo(current - 1));
-  heroNext && heroNext.addEventListener('click', () => goTo(current + 1));
+  // Flechas de la galería
+  galleryPrev && galleryPrev.addEventListener('click', () => goTo(current - 1));
+  galleryNext && galleryNext.addEventListener('click', () => goTo(current + 1));
 
-  // Clic en hero → abre lightbox
-  const hero = document.getElementById('productHero');
-  hero && hero.addEventListener('click', e => {
-    if (e.target.closest('.hero-arrow, .product-breadcrumb, .btn-wa-hero, .strip-thumb')) return;
+  // Clic en la foto principal → abre lightbox
+  galleryMain && galleryMain.addEventListener('click', e => {
+    if (e.target.closest('.gallery-arrow')) return;
     if (lightbox) {
       lbImg.src = photos[current];
       lightbox.classList.add('open');
@@ -182,10 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (Math.abs(d) > 50) d > 0 ? onLeft() : onRight();
     }, { passive: true });
   }
-  hero     && addSwipe(hero,     () => goTo(current + 1), () => goTo(current - 1));
-  lightbox && addSwipe(lightbox, () => goTo(current + 1), () => goTo(current - 1));
-
-  // Efecto zoom Ken Burns al cargar
-  heroBg && setTimeout(() => heroBg.classList.add('zooming'), 100);
+  galleryMain && addSwipe(galleryMain, () => goTo(current + 1), () => goTo(current - 1));
+  lightbox    && addSwipe(lightbox,    () => goTo(current + 1), () => goTo(current - 1));
 
 });
