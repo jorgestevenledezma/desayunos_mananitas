@@ -15,7 +15,7 @@
       title: '¡San Valentín se acerca!',
       desc: 'Sorprende a tu persona favorita con un brunch romántico lleno de amor.',
       ctaText: '💕 Pedir para San Valentín',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20para%20San%20Valentín%20💝',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20para%20San%20Valentín%20💝',
       gradient: 'linear-gradient(135deg, #e91e63, #c2185b, #ad1457)',
       ctaColor: '#e91e63'
     },
@@ -28,20 +28,20 @@
       title: '¡Feliz Día de la Mujer!',
       desc: 'Celebra a esa mujer increíble con un desayuno lleno de flores y cariño.',
       ctaText: '🌷 Pedir para Día de la Mujer',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20para%20el%20Día%20de%20la%20Mujer%20💐',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20para%20el%20Día%20de%20la%20Mujer%20💐',
       gradient: 'linear-gradient(135deg, #9c27b0, #7b1fa2, #6a1b9a)',
       ctaColor: '#9c27b0'
     },
     {
       id: 'dia-madre',
       name: 'Día de la Madre',
-      startMonth: 4, startDay: 1,
-      endMonth: 4, endDay: null, // Se calcula dinámicamente
+      startMonth: 3, startDay: 9,
+      endMonth: 4, endDay: null, // Se calcula dinámicamente (2do domingo de mayo)
       emoji: '👩‍👧‍👦',
-      title: '¡Día de la Madre!',
-      desc: 'Mamá merece el mejor desayuno del mundo. Hazla sentir especial.',
-      ctaText: '💖 Pedir para Mamá',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20para%20el%20Día%20de%20la%20Madre%20💖',
+      title: '¡Sorprende a Mamá este 11 de mayo!',
+      desc: 'Tenemos desayunos especiales para ella. Reserva con tiempo y llegamos desde las 6 a.m.',
+      ctaText: '💖 Ver desayunos para Mamá',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20para%20el%20D%C3%ADa%20de%20la%20Madre%20%F0%9F%92%96',
       gradient: 'linear-gradient(135deg, #e91e63, #f06292, #f48fb1)',
       ctaColor: '#e91e63'
     },
@@ -54,7 +54,7 @@
       title: '¡Día del Padre!',
       desc: 'Papá también merece una sorpresa. Un brunch que nunca olvidará.',
       ctaText: '💙 Pedir para Papá',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20para%20el%20Día%20del%20Padre%20💙',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20para%20el%20Día%20del%20Padre%20💙',
       gradient: 'linear-gradient(135deg, #1565c0, #1976d2, #42a5f5)',
       ctaColor: '#1565c0'
     },
@@ -67,7 +67,7 @@
       title: '¡Amor y Amistad!',
       desc: 'Celebra con tus amigos y seres queridos con un desayuno sorpresa.',
       ctaText: '🤗 Pedir para Amor y Amistad',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20para%20Amor%20y%20Amistad%20💛',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20para%20Amor%20y%20Amistad%20💛',
       gradient: 'linear-gradient(135deg, #ff6f00, #ff8f00, #ffa000)',
       ctaColor: '#ff6f00'
     },
@@ -80,7 +80,7 @@
       title: '¡Halloween Mañanitas!',
       desc: 'Desayunos temáticos de Halloween. ¡Sustos dulces para empezar el día!',
       ctaText: '🎃 Pedir Halloween',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20temático%20de%20Halloween%20🎃',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20temático%20de%20Halloween%20🎃',
       gradient: 'linear-gradient(135deg, #e65100, #f57c00, #ff9800)',
       ctaColor: '#e65100'
     },
@@ -93,7 +93,7 @@
       title: '¡Feliz Navidad!',
       desc: 'Regala un desayuno navideño lleno de magia y sabor. El detalle perfecto.',
       ctaText: '🎁 Pedir Navideño',
-      ctaUrl: 'https://wa.me/573045236602?text=Hola%20🐰%20Quiero%20pedir%20un%20desayuno%20navideño%20🎄',
+      ctaUrl: 'https://wa.me/573045236602?text=Hola%20%F0%9F%90%B0%20Quiero%20pedir%20un%20desayuno%20navideño%20🎄',
       gradient: 'linear-gradient(135deg, #b71c1c, #c62828, #d32f2f)',
       ctaColor: '#b71c1c'
     }
