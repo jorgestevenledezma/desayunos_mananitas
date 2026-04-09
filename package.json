@@ -1,0 +1,20 @@
+{
+  "name": "desayunos_mananitas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgestevenledezma/desayunos_mananitas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgestevenledezma/desayunos_mananitas/issues"
+  },
+  "homepage": "https://github.com/jorgestevenledezma/desayunos_mananitas#readme"
+}

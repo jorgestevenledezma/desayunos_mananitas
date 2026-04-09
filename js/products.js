@@ -1,8 +1,7 @@
 /**
- * DESAYUNOS MAÑANITAS — Catálogo 2026
- * Archivo central de datos de productos.
- * Edita aquí para actualizar precios, nombres e ingredientes.
- * Luego ejecuta: node generate.js
+ * DESAYUNOS MAÑANITAS — Catálogo de productos
+ * Generado automáticamente desde productos_2026.xlsx
+ * Para editar: abre el Excel, modifica y corre: node import-excel.js
  */
 
 const PRODUCTS = [
@@ -14,7 +13,7 @@ const PRODUCTS = [
     category: 'economico',
     badge: '👨 Especial Papá',
     note: 'Desayuno exclusivo para un día especial o cumpleaños de Papá',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Croissant con jamón, queso y tortilla de huevo',
       'Bebida natural o caliente',
@@ -23,8 +22,8 @@ const PRODUCTS = [
     ],
     decoration: 'Vaso Mug alusivo a Papá, tarjeta y tag, 2 globos en helio, caja de acetato',
     gradient: 'linear-gradient(135deg, #6f4e37, #a0522d, #cd853f)',
-    gradientHero: ['#6f4e37', '#a0522d', '#e8d5a8'],
   },
+
   {
     id: 'brunch-express',
     name: 'Brunch Express',
@@ -33,7 +32,7 @@ const PRODUCTS = [
     category: 'economico',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich de croissant con jamón y queso',
       'Waffles con fruta y sirope',
@@ -43,8 +42,8 @@ const PRODUCTS = [
     ],
     decoration: 'Caja Fancy, tarjeta personalizada y tag, vaso Mug',
     gradient: 'linear-gradient(135deg, #fde2e4, #fad2e1, #fce4ec)',
-    gradientHero: ['#fce4ec', '#f8bbd0', '#e8829e'],
   },
+
   {
     id: 'brunch-capitulo-de-pelicula',
     name: 'Brunch Capitulo de Pelicula',
@@ -53,7 +52,7 @@ const PRODUCTS = [
     category: 'economico',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich de croissant con jamón',
       'Mini parfait de yogurt griego, granola artesanal y fruta',
@@ -63,8 +62,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bolsa Box, tarjeta personalizada, tag y lazo decorativo, vaso Mug',
     gradient: 'linear-gradient(135deg, #f3e5f5, #e1bee7, #ce93d8)',
-    gradientHero: ['#e1bee7', '#ba68c8', '#9c27b0'],
   },
+
   {
     id: 'petit-brunch',
     name: 'Petit Brunch',
@@ -73,7 +72,7 @@ const PRODUCTS = [
     category: 'economico',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap de huevitos, jamón, queso y vegetales',
       'Bebida natural o café en leche',
@@ -83,8 +82,8 @@ const PRODUCTS = [
     ],
     decoration: 'Caja de madera decorativa, servilleta y cubiertos, 1 globo en helio, tarjeta y tag',
     gradient: 'linear-gradient(135deg, #f8e8ee, #e8d5e0, #fce4ec)',
-    gradientHero: ['#f8e8ee', '#e8829e', '#c4507a'],
   },
+
   {
     id: 'brunch-capitulo-de-amor',
     name: 'Brunch Capitulo de Amor',
@@ -93,7 +92,7 @@ const PRODUCTS = [
     category: 'economico',
     badge: '🌸 Especial Mamá',
     note: 'Desayuno exclusivo para un día especial o cumpleaños de Mamá',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich con jamón, queso sabana de Alpina, vegetales y dip de la casa',
       'Bowl con waffles, fruta y sirope',
@@ -104,8 +103,8 @@ const PRODUCTS = [
     ],
     decoration: 'Caja decorativa tipo libro, 2 globos en helio',
     gradient: 'linear-gradient(135deg, #fce4ec, #f48fb1, #e91e8c)',
-    gradientHero: ['#fce4ec', '#f48fb1', '#c4507a'],
   },
+
   {
     id: 'brunch-brisa-de-ternura',
     name: 'Brunch Brisa de Ternura',
@@ -114,7 +113,7 @@ const PRODUCTS = [
     category: 'economico',
     badge: '👩 Solo para Dama',
     note: 'Opción únicamente para dama',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich con jamón, queso sabana de Alpina, vegetales y dip de la casa',
       'Parfait con yogurt griego, granola, frutas y cuadrito de chocolate',
@@ -123,8 +122,8 @@ const PRODUCTS = [
     ],
     decoration: 'Tacita y platico de cerámica, caja decorativa con moño en tela, tarjeta y tag',
     gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0, #ffcdd2)',
-    gradientHero: ['#fce4ec', '#f8bbd0', '#e8829e'],
   },
+
   {
     id: 'royal-brunch',
     name: 'Royal Brunch',
@@ -133,7 +132,7 @@ const PRODUCTS = [
     category: 'medio',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap de huevos',
       'Bebida natural y caliente',
@@ -144,8 +143,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantelito de satín, ramillete de astromelias, cubiertos, tarjeta y tag, 2 globos en helio',
     gradient: 'linear-gradient(135deg, #fce4ec, #e1bee7, #f3e5f5)',
-    gradientHero: ['#e1bee7', '#ce93d8', '#9c27b0'],
   },
+
   {
     id: 'brunch-le-petit-waffle',
     name: 'Brunch le Petit Waffle',
@@ -154,7 +153,7 @@ const PRODUCTS = [
     category: 'medio',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap de huevitos, jamón, queso y vegetales',
       'Torre de waffles con fruta',
@@ -163,8 +162,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantel de satín, plato de cerámica, ramillete de astromelias y jarrón, tarjeta y tag, 3 globos en helio, cubierto',
     gradient: 'linear-gradient(135deg, #fff3e0, #ffe0b2, #ffcc80)',
-    gradientHero: ['#fff3e0', '#ffb74d', '#f57c00'],
   },
+
   {
     id: 'brunch-oliva',
     name: 'Brunch Oliva',
@@ -173,7 +172,7 @@ const PRODUCTS = [
     category: 'medio',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich con jamón, queso, vegetales y dip de la casa',
       'Bebida natural y caliente',
@@ -183,8 +182,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantel de satín, plato de cerámica, tarjeta y tag, 3 globos en helio, cubierto',
     gradient: 'linear-gradient(135deg, #e8f5e9, #c8e6c9, #a5d6a7)',
-    gradientHero: ['#e8f5e9', '#66bb6a', '#388e3c'],
   },
+
   {
     id: 'brunch-mes-amies',
     name: 'Brunch Mes Amies',
@@ -193,7 +192,7 @@ const PRODUCTS = [
     category: 'medio',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap con jamón, queso, vegetales y dip de la casa',
       'Waffles con fruta y sirope',
@@ -204,8 +203,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantel de satín, ramillete de astromelias y jarrón, 3 globos en helio, portarretrato + impresión de foto, tarjeta y tag, cubierto',
     gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0, #e8829e)',
-    gradientHero: ['#fce4ec', '#f8bbd0', '#c4507a'],
   },
+
   {
     id: 'brunch-chic',
     name: 'Brunch Chic',
@@ -214,7 +213,7 @@ const PRODUCTS = [
     category: 'medio',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap con jamón, queso, vegetales y dip de la casa',
       'Bebida natural y caliente',
@@ -226,8 +225,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantel de satín, ramillete de astromelias y jarrón, tarjeta y tag, 3 globos en helio, cubierto',
     gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0, #e8b4c8)',
-    gradientHero: ['#fce4ec', '#f06292', '#c4507a'],
   },
+
   {
     id: 'brunch-amelie',
     name: 'Brunch Amélie',
@@ -236,7 +235,7 @@ const PRODUCTS = [
     category: 'medio',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap con jamón, queso y vegetales',
       'Waffles con fruta y sirope',
@@ -247,8 +246,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantel de satín, ramillete de astromelias y jarrón, tarjeta y tag, 3 globos en helio, cubierto, vaso termo para café',
     gradient: 'linear-gradient(135deg, #fce4ec, #f48fb1, #ec407a)',
-    gradientHero: ['#fce4ec', '#f48fb1', '#c4507a'],
   },
+
   {
     id: 'brunch-cherie',
     name: 'Brunch Chérie',
@@ -257,7 +256,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: '💕 Romántico',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Plato en microcerámica con wrap de huevitos, jamón, queso, maicitos y vegetales frescos',
       'Waffles con fruta y sirope',
@@ -268,8 +267,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja redonda de madera con mantel de satín, botella de vino rosado, 4 globos en helio, tarjeta y tag, cubierto',
     gradient: 'linear-gradient(135deg, #fff0f3, #ffccd5, #ff8fa3)',
-    gradientHero: ['#fff0f3', '#ff8fa3', '#c4507a'],
   },
+
   {
     id: 'brunch-clasicc',
     name: 'Brunch Clasicc',
@@ -278,7 +277,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: '⭐ Popular',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap de huevitos, jamón, queso y vegetales',
       'Waffles con fruta y sirope',
@@ -290,8 +289,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantel de satín, ramillete de rosas (20–25) y jarrón, tarjeta y tag, 3 globos en helio, cubierto',
     gradient: 'linear-gradient(135deg, #fce4ec, #f48fb1, #ec407a)',
-    gradientHero: ['#fce4ec', '#e91e8c', '#880e4f'],
   },
+
   {
     id: 'brunch-amor-de-pelicula',
     name: 'Brunch Amor de Pelicula',
@@ -302,7 +301,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: '🎬 Especial',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich de croissant con jamón y queso',
       'Waffles con fruta y sirope',
@@ -313,8 +312,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja de madera con mantelito, tarjeta y tag, taza de cerámica y platico de corazones con tapa de cristal, libro de citas, 3 globos en helio',
     gradient: 'linear-gradient(135deg, #e8eaf6, #c5cae9, #9fa8da)',
-    gradientHero: ['#e8eaf6', '#7986cb', '#3949ab'],
   },
+
   {
     id: 'brunch-premium',
     name: 'Brunch Premium',
@@ -323,7 +322,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Baguette artesanal con arándanos, jamón de pavo, queso Gouda, lechuga y dip de la casa',
       'Omelette con jamón, queso mozzarella, vegetales y especias',
@@ -334,8 +333,8 @@ const PRODUCTS = [
     ],
     decoration: 'Bandeja tipo mesa de madera con mantel de satín, botella de vino tinto, 3 globos en helio, tarjeta y tag, cubierto, portarretrato',
     gradient: 'linear-gradient(135deg, #4a1942, #8b1a4a, #c2185b)',
-    gradientHero: ['#4a1942', '#8b1a4a', '#c2185b'],
   },
+
   {
     id: 'brunch-criollo-chic',
     name: 'Brunch Criollo Chic',
@@ -344,7 +343,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: '🇨🇴 Criollo',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Chicharrón, arepas y 2 chorizos',
       'Wrap de huevos y chorizo',
@@ -356,8 +355,8 @@ const PRODUCTS = [
     ],
     decoration: 'Ramillete de hortensias y jarrón, bandeja de madera con mantel de satín y cubierto, tarjeta y tag, 3 globos en helio',
     gradient: 'linear-gradient(135deg, #efebe9, #d7ccc8, #bcaaa4)',
-    gradientHero: ['#efebe9', '#8d6e63', '#4e342e'],
   },
+
   {
     id: 'brunch-dulce-amanecer',
     name: 'Brunch Dulce Amanecer',
@@ -366,7 +365,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich (jamón, queso y dip de la casa)',
       'Waffles con fruta y sirope',
@@ -377,8 +376,8 @@ const PRODUCTS = [
     ],
     decoration: 'Plato de cerámica y taza de café, tetera, tarjeta y tag, bandeja de madera con mantel de satín y cubierto, globo burbuja + globos en helio',
     gradient: 'linear-gradient(135deg, #fff8e1, #ffe082, #ffd54f)',
-    gradientHero: ['#fff8e1', '#ffca28', '#f57f17'],
   },
+
   {
     id: 'brunch-coquette',
     name: 'Brunch Coquette',
@@ -387,7 +386,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: '🏆 Exclusivo',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Wrap de maicitos, jamón, queso mozzarella y huevitos revueltos',
       'Dos waffles con sirope y frutas frescas',
@@ -398,18 +397,17 @@ const PRODUCTS = [
     ],
     decoration: 'Set de taza y plato en diseño de corazón, bandeja de madera con mantel de satín, tarjeta y tag, ramillete de rosas, opcional: pulserita artesanal como recuerdo',
     gradient: 'linear-gradient(135deg, #880e4f, #ad1457, #c62828)',
-    gradientHero: ['#880e4f', '#ad1457', '#e91e63'],
   },
+
   {
     id: 'brunch-je-taime',
-    name: "Brunch Je t'aime",
-    name_url: 'brunch-je-taime',
+    name: 'Brunch Je t\'aime',
     price: 320000,
     emoji: '🥂',
     category: 'premium',
     badge: '💕 Romántico',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Sándwich de bagel horneado artesanal con arándanos, jamón de pavo, queso Gouda, lechuga y dip de la casa',
       'Omelette con queso y maíz tierno',
@@ -419,8 +417,8 @@ const PRODUCTS = [
     ],
     decoration: 'Botella de vino rosado, portarretrato, mesa de madera con mantelito, cubiertos, tarjeta y tag, globos en helio',
     gradient: 'linear-gradient(135deg, #fde2e4, #e2ece9, #fad2e1)',
-    gradientHero: ['#fde2e4', '#f48fb1', '#c4507a'],
   },
+
   {
     id: 'brunch-kk',
     name: 'Brunch Especial',
@@ -429,7 +427,7 @@ const PRODUCTS = [
     category: 'premium',
     badge: '👑 Top',
     note: 'La decoración es alusiva según la ocasión',
-    photos: [], // Ej: ['foto1.jpg','foto2.jpg'] — pon las fotos en img/productos/[id]/
+    photos: [],
     includes: [
       'Waffles con fruta y sirope',
       'Wrap de huevos',
@@ -441,8 +439,7 @@ const PRODUCTS = [
     ],
     decoration: 'Rosas (20–25) y jarrón, prensa francesa, bandeja de madera con mantel de satín y cubierto, tarjeta personalizada, tag y pincho, globos en helio',
     gradient: 'linear-gradient(135deg, #c9a96e, #e8d5a8, #c9a96e)',
-    gradientHero: ['#c9a96e', '#e8d5a8', '#8d6e63'],
-  },
+  }
 ];
 
 // Para uso en Node.js (generate.js)
