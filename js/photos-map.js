@@ -1,0 +1,26 @@
+// Generado automáticamente por generate.js — no editar
+var PHOTOS_MAP = {
+  "mini-brunch": null,
+  "brunch-el-rey-del-cafe": "productos/brunch-el-rey-del-cafe/img/Mini%20brunch%20(2).jpeg",
+  "brunch-express": null,
+  "brunch-capitulo-de-pelicula": null,
+  "petit-brunch": null,
+  "brunch-capitulo-de-amor": null,
+  "brunch-brisa-de-ternura": null,
+  "royal-brunch": null,
+  "brunch-coquette-clasico": null,
+  "brunch-le-petit-waffle": null,
+  "brunch-oliva": null,
+  "brunch-mes-amies": null,
+  "brunch-chic": null,
+  "brunch-amelie": null,
+  "brunch-cherie": null,
+  "brunch-clasicc": null,
+  "brunch-amor-de-pelicula": null,
+  "brunch-premium": null,
+  "brunch-criollo-chic": null,
+  "brunch-dulce-amanecer": null,
+  "brunch-coquette": null,
+  "brunch-je-taime": null,
+  "brunch-kk": null
+};

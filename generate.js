@@ -399,6 +399,7 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 }
 
 let generated = 0;
+const photosMap = {};
 
 PRODUCTS.forEach(product => {
   const dir = path.join(OUTPUT_DIR, product.id);
@@ -410,10 +411,20 @@ PRODUCTS.forEach(product => {
   const file    = path.join(dir, 'index.html');
 
   fs.writeFileSync(file, html, 'utf8');
+
+  // Guardar primera foto para el mapa del catálogo
+  photosMap[product.id] = photos.length > 0
+    ? `productos/${product.id}/img/${photos[0]}`
+    : null;
+
   const photoInfo = photos.length > 0 ? ` (${photos.length} foto${photos.length > 1 ? 's' : ''})` : '';
   console.log(`✓ productos/${product.id}/${photoInfo}`);
   generated++;
 });
+
+// Generar js/photos-map.js para que catalog.js muestre fotos en el catálogo
+const mapContent = `// Generado automáticamente por generate.js — no editar\nvar PHOTOS_MAP = ${JSON.stringify(photosMap, null, 2)};\n`;
+fs.writeFileSync(path.join(ROOT, 'js', 'photos-map.js'), mapContent, 'utf8');
 
 console.log(`\n✅ ${generated} páginas generadas en /productos/`);
 console.log(`   Para publicar: haz commit y push a GitHub.\n`);

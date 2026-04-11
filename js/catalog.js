@@ -31,13 +31,17 @@
       return '<p>' + i + '</p>';
     }).join('');
 
+    var photo = (window.PHOTOS_MAP && window.PHOTOS_MAP[p.id]) || null;
+    var visualInner = photo
+      ? '<img src="' + photo + '" class="card-photo" alt="' + p.name + '" loading="lazy"><div class="card-photo-overlay"></div><div class="card-emoji card-emoji--photo">' + p.emoji + '</div>'
+      : '<div class="card-gradient" style="background:' + p.gradient + '"></div><div class="card-emoji">' + p.emoji + '</div>';
+
     return [
       '<div class="product-card fade-up" data-category="' + p.category + '" data-price="' + p.price + '">',
         badge,
         '<a href="productos/' + p.id + '/" style="text-decoration:none;display:block;">',
           '<div class="card-visual">',
-            '<div class="card-gradient" style="background:' + p.gradient + '"></div>',
-            '<div class="card-emoji">' + p.emoji + '</div>',
+            visualInner,
           '</div>',
         '</a>',
         '<div class="card-body">',
