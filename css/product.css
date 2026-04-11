@@ -403,27 +403,21 @@
 }
 
 .btn-back-catalog {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: white;
-  color: var(--pink-deep);
-  padding: 14px 24px;
-  border-radius: 50px;
+  display: block;
+  text-align: center;
   text-decoration: none;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 0.92rem;
-  border: 2px solid var(--pink-soft);
-  transition: all 0.3s;
-  width: 100%;
+  font-size: 0.85rem;
+  color: var(--pink-deep);
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  padding: 4px 0;
 }
 
 .btn-back-catalog:hover {
-  background: var(--pink-pale);
-  border-color: var(--pink-main);
-  transform: translateY(-2px);
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* Compartir */

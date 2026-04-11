@@ -188,4 +188,18 @@
     <priority>0.85</priority>
   </url>
 
+  <url>
+    <loc>https://www.desayunosmananitas.com/productos/mini-brunch/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.desayunosmananitas.com/productos/brunch-coquette-clasico/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>

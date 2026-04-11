@@ -185,21 +185,49 @@ function buildHTML(product, related, photos) {
     ? `<div class="product-price-alt">Sin libro de citas: ${formatPrice(product.priceAlt)}</div>`
     : '';
 
-  // Schema.org
-  const schema = JSON.stringify({
+  // Schema.org Product + BreadcrumbList
+  const schemaProduct = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "description": descText,
+    "description": `${descText}. Desayuno sorpresa a domicilio en Cali, Jamundí y Yumbo.`,
     "brand": { "@type": "Brand", "name": "Desayunos Mañanitas" },
+    "image": `${BASE_URL}/img/logo-horizontal-rosado.png`,
+    "sku": product.id,
     "offers": {
       "@type": "Offer",
       "price": product.price,
       "priceCurrency": "COP",
       "availability": "https://schema.org/InStock",
-      "url": canonicalUrl
+      "url": canonicalUrl,
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Desayunos Mañanitas",
+        "telephone": "+573045236602",
+        "address": { "@type": "PostalAddress", "addressLocality": "Cali", "addressRegion": "Valle del Cauca", "addressCountry": "CO" }
+      },
+      "areaServed": ["Cali", "Jamundí", "Yumbo", "Ciudad del Campo"],
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "currency": "COP", "minValue": 10000, "maxValue": 30000 },
+        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" } }
+      }
     }
   }, null, 2);
+
+  const schemaBreadcrumb = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Catálogo de Desayunos", "item": `${BASE_URL}/#catalogo` },
+      { "@type": "ListItem", "position": 3, "name": product.name, "item": canonicalUrl }
+    ]
+  }, null, 2);
+
+  const categoryLabel = { economico: 'económico', medio: 'estándar', premium: 'premium' }[product.category] || '';
+  const metaTitle = `${product.name} a Domicilio en Cali | Desayunos Mañanitas`;
+  const metaDesc  = `${product.name}: ${descText}. Desayuno sorpresa ${categoryLabel} desde ${formatPrice(product.price)} + domicilio en Cali, Jamundí y Yumbo. ¡Pide ahora por WhatsApp!`;
 
   return `<!DOCTYPE html>
 <html lang="es-CO">
@@ -207,30 +235,41 @@ function buildHTML(product, related, photos) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>${product.name} | Desayunos Mañanitas - Desayunos Sorpresa a Domicilio en Cali</title>
-<meta name="description" content="${product.name}: ${descText}. Desde ${formatPrice(product.price)} + domicilio. Desayunos sorpresa a domicilio en Cali, Jamundí y Yumbo. ¡Pide ya por WhatsApp!">
-<meta name="robots" content="index, follow">
+<!-- SEO LOCAL CALI -->
+<title>${metaTitle}</title>
+<meta name="description" content="${metaDesc}">
+<meta name="keywords" content="${product.name}, desayunos a domicilio Cali, brunch Cali, desayunos sorpresa Cali, ${product.name} Cali, desayunos Jamundí, desayunos Yumbo">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="geo.region" content="CO-VAC">
+<meta name="geo.placename" content="Cali, Valle del Cauca, Colombia">
 <link rel="canonical" href="${canonicalUrl}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="product">
-<meta property="og:title" content="${product.name} | Desayunos Mañanitas">
-<meta property="og:description" content="${descText}. Desde ${formatPrice(product.price)} + domicilio. ¡Sorprende a quien más quieres!">
+<meta property="og:title" content="${metaTitle}">
+<meta property="og:description" content="${metaDesc}">
 <meta property="og:url" content="${canonicalUrl}">
 <meta property="og:image" content="${BASE_URL}/img/logo-horizontal-rosado.png">
+<meta property="og:image:alt" content="${product.name} - Desayunos Mañanitas Cali">
 <meta property="og:site_name" content="Desayunos Mañanitas">
 <meta property="og:locale" content="es_CO">
+<meta property="product:price:amount" content="${product.price}">
+<meta property="product:price:currency" content="COP">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${product.name} | Desayunos Mañanitas">
-<meta name="twitter:description" content="${descText}. Desde ${formatPrice(product.price)}.">
+<meta name="twitter:title" content="${metaTitle}">
+<meta name="twitter:description" content="${metaDesc}">
 <meta name="twitter:image" content="${BASE_URL}/img/logo-horizontal-rosado.png">
 
 <!-- Schema.org Product -->
 <script type="application/ld+json">
-${schema}
+${schemaProduct}
+</script>
+
+<!-- Schema.org BreadcrumbList -->
+<script type="application/ld+json">
+${schemaBreadcrumb}
 </script>
 
 <!-- Google Analytics -->

@@ -66,18 +66,36 @@
 <meta name="twitter:image" content="https://www.desayunosmananitas.com/img/logo-horizontal-rosado.png">
 <meta name="twitter:image:alt" content="Desayunos Mañanitas - Logo">
 
-<!-- Schema.org - LocalBusiness -->
+<!-- Schema.org - WebSite -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "WebSite",
+  "name": "Desayunos Mañanitas",
+  "url": "https://www.desayunosmananitas.com",
+  "description": "Desayunos y brunch sorpresa a domicilio en Cali, Jamundí y Yumbo",
+  "inLanguage": "es-CO",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.desayunosmananitas.com/#catalogo",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema.org - LocalBusiness + FoodEstablishment -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "FoodEstablishment"],
   "@id": "https://www.desayunosmananitas.com/#business",
   "name": "Desayunos Mañanitas",
-  "alternateName": "Mañanitas Desayunos Sorpresa",
-  "description": "Desayunos sorpresa y brunch artesanales a domicilio en Cali, Jamundí y Ciudad del Campo. Cajas decorativas, waffles, frutas frescas, flores y detalles personalizados.",
+  "alternateName": "Mañanitas Desayunos Sorpresa Cali",
+  "description": "Desayunos sorpresa y brunch artesanales a domicilio en Cali, Jamundí, Yumbo y Ciudad del Campo. Cajas decorativas, waffles, frutas frescas, flores y detalles personalizados. Entrega desde las 5:30 a.m.",
   "url": "https://www.desayunosmananitas.com",
   "telephone": "+573045236602",
   "email": "desayunosmananitas@gmail.com",
+  "servesCuisine": ["Brunch", "Desayuno", "Comida artesanal"],
   "image": {
     "@type": "ImageObject",
     "url": "https://www.desayunosmananitas.com/img/logo-horizontal-rosado.png",
@@ -85,28 +103,20 @@
     "height": 630
   },
   "logo": "https://www.desayunosmananitas.com/img/logo-redondo-rosado-claro.png",
-  "priceRange": "$60.000 - $320.000 COP",
+  "priceRange": "$80.000 - $370.000 COP",
   "currenciesAccepted": "COP",
-  "paymentAccepted": "Cash, Bank Transfer, Nequi, Daviplata",
+  "paymentAccepted": "Cash, Transferencia bancaria, Nequi, Daviplata",
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Cali",
-      "sameAs": "https://es.wikipedia.org/wiki/Cali"
-    },
-    {
-      "@type": "City",
-      "name": "Jamundí"
-    },
-    {
-      "@type": "Place",
-      "name": "Ciudad del Campo"
-    }
+    { "@type": "City", "name": "Cali", "sameAs": "https://es.wikipedia.org/wiki/Cali" },
+    { "@type": "City", "name": "Jamundí" },
+    { "@type": "City", "name": "Yumbo" },
+    { "@type": "Place", "name": "Ciudad del Campo" }
   ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Cali",
     "addressRegion": "Valle del Cauca",
+    "postalCode": "760001",
     "addressCountry": "CO"
   },
   "geo": {
@@ -114,6 +124,7 @@
     "latitude": 3.4516,
     "longitude": -76.5320
   },
+  "hasMap": "https://maps.google.com/?q=Cali,Valle+del+Cauca,Colombia",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -126,34 +137,20 @@
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Catálogo de Desayunos y Brunch",
+    "name": "Catálogo de Desayunos y Brunch a Domicilio Cali",
+    "numberOfItems": 23,
     "itemListElement": [
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Mini Box",
-          "description": "Café en leche, 2 rollitos con jamón, 4 waffles con fruta, 1 cupcake, caja decorativa y tarjeta personalizada",
-          "offers": { "@type": "Offer", "price": "60000", "priceCurrency": "COP", "availability": "https://schema.org/InStock" }
-        }
+        "itemOffered": { "@type": "Product", "name": "Mini Brunch", "offers": { "@type": "Offer", "price": "80000", "priceCurrency": "COP", "availability": "https://schema.org/InStock" } }
       },
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Brunch Clasicc",
-          "description": "Sándwich de croissant con jamón de pavo y queso Gouda, bowl de frutas, waffles, parfait, ramillete de 20-25 rosas y globos",
-          "offers": { "@type": "Offer", "price": "220000", "priceCurrency": "COP", "availability": "https://schema.org/InStock" }
-        }
+        "itemOffered": { "@type": "Product", "name": "Brunch Clasicc", "offers": { "@type": "Offer", "price": "250000", "priceCurrency": "COP", "availability": "https://schema.org/InStock" } }
       },
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Brunch Je t'aime XL",
-          "description": "Bagel artesanal, omelette, waffles, parfait, vino rosado, portarretrato, mesa de madera con mantelito y globos",
-          "offers": { "@type": "Offer", "price": "320000", "priceCurrency": "COP", "availability": "https://schema.org/InStock" }
-        }
+        "itemOffered": { "@type": "Product", "name": "Brunch KK", "offers": { "@type": "Offer", "price": "370000", "priceCurrency": "COP", "availability": "https://schema.org/InStock" } }
       }
     ]
   },
