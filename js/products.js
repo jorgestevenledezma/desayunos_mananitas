@@ -7,7 +7,7 @@ const PRODUCTS = [
   {
     id: 'mini-brunch',
     name: 'Mini Brunch',
-    price: 750000,
+    price: 75000,
     emoji: '🍳',
     category: 'economico',
     badge: null,
