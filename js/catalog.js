@@ -17,9 +17,7 @@
   }
 
   function waUrl(p) {
-    const msg = encodeURIComponent(
-      'Hola \uD83D\uDC30 Quiero pedir el ' + p.name + ' (' + formatPrice(p.price) + ')'
-    );
+    var msg = encodeURIComponent('Hola, ' + p.name + ' (' + formatPrice(p.price) + ')');
     return 'https://wa.me/' + WA + '?text=' + msg;
   }
 
