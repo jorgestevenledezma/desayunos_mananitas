@@ -97,25 +97,27 @@ if (dupes.length) {
 }
 
 // ── Generar js/products.js ────────────────────────────────────
+function esc(s) { return (s || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
+
 const lines = PRODUCTS.map(p => {
   const extras = p.priceAlt
-    ? `\n    priceAlt: ${p.priceAlt},\n    priceAltLabel: '${p.priceAltLabel}',`
+    ? `\n    priceAlt: ${p.priceAlt},\n    priceAltLabel: '${esc(p.priceAltLabel)}',`
     : '';
-  const includes = p.includes.map(i => `      '${i.replace(/'/g, "\\'")}'`).join(',\n');
+  const includes = p.includes.map(i => `      '${esc(i)}'`).join(',\n');
   return `  {
-    id: '${p.id}',
-    name: '${p.name.replace(/'/g, "\\'")}',
+    id: '${esc(p.id)}',
+    name: '${esc(p.name)}',
     price: ${p.price},${extras}
-    emoji: '${p.emoji}',
-    category: '${p.category}',
-    badge: ${p.badge ? `'${p.badge.replace(/'/g, "\\'")}'` : 'null'},
-    note: '${p.note.replace(/'/g, "\\'")}',
+    emoji: '${esc(p.emoji)}',
+    category: '${esc(p.category)}',
+    badge: ${p.badge ? `'${esc(p.badge)}'` : 'null'},
+    note: '${esc(p.note)}',
     photos: [],
     includes: [
 ${includes},
     ],
-    decoration: '${p.decoration.replace(/'/g, "\\'")}',
-    gradient: '${p.gradient}',
+    decoration: '${esc(p.decoration)}',
+    gradient: '${esc(p.gradient)}',
   }`;
 }).join(',\n\n');
 
