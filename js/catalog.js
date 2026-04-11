@@ -17,7 +17,7 @@
   }
 
   function waUrl(p) {
-    var msg = encodeURIComponent('Hola, estoy interesado en el ' + p.name + ' y el valor ' + formatPrice(p.price));
+    var msg = encodeURIComponent('Hola, estoy interesado en el ' + p.name + ' (' + formatPrice(p.price) + ')');
     return 'https://wa.me/' + WA + '?text=' + msg;
   }
 

@@ -33,7 +33,7 @@ function formatPrice(n) {
 }
 
 function waLink(product) {
-  const text = encodeURIComponent(`Hola, estoy interesado en el ${product.name} y el valor ${formatPrice(product.price)}`);
+  const text = encodeURIComponent(`Hola, estoy interesado en el ${product.name} (${formatPrice(product.price)})`);
   return `https://wa.me/${WA_NUMBER}?text=${text}`;
 }
 
