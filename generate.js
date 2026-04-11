@@ -305,43 +305,49 @@ ${lightboxHTML}
         ${noteHTML}
       </div>
 
-      <!-- Columna derecha: CTA (sticky en desktop) -->
+      <!-- Columna derecha: galería + acción -->
       <div class="product-right">
-        <div class="product-cta-panel">
-          <div class="product-price-card">
-            <div class="product-price-label">Precio</div>
-            <div class="product-price-main">${formatPrice(product.price)}</div>
-            <div class="product-price-delivery">+ costo de domicilio</div>
-            ${priceAltCardHTML}
-            <a href="${waLink(product)}" class="btn-wa-product" target="_blank" rel="noopener">
-              <span class="wa-icon">💬</span>
-              Pedir por WhatsApp
-            </a>
-            <a href="../../#catalogo" class="btn-back-catalog">
-              ← Ver todos los desayunos
-            </a>
-          </div>
 
-          <!-- Compartir -->
-          <div class="product-share">
-            <div class="product-share-title">Comparte este desayuno</div>
-            <div class="product-share-btns">
-              <a href="${waShareLink(product)}" class="share-btn share-btn-wa" target="_blank" rel="noopener">
-                💬 WhatsApp
-              </a>
-              <button class="share-btn share-btn-copy" id="shareCopyBtn">
-                🔗 Copiar enlace
-              </button>
-            </div>
+        ${hasPhotos ? `
+        <!-- Galería de fotos -->
+        <div class="product-gallery-panel">
+          <div class="gallery-main" id="galleryMain">
+            <img src="img/${photos[0]}" alt="${product.name}" class="gallery-main-img" id="galleryMainImg" loading="lazy">
+            ${photos.length > 1 ? `
+            <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Anterior">‹</button>
+            <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Siguiente">›</button>
+            <div class="gallery-counter"><span id="galleryIdx">1</span> / ${photos.length}</div>` : ''}
+          </div>
+          ${photos.length > 1 ? `
+          <div class="gallery-thumbs">
+            ${photos.map((p, i) => `
+            <button class="gallery-thumb ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="Foto ${i + 1}">
+              <img src="img/${p}" alt="${product.name} foto ${i + 1}" loading="lazy">
+            </button>`).join('')}
+          </div>` : ''}
+        </div>` : ''}
+
+        <!-- Acción: un solo botón + compartir compacto -->
+        <div class="product-action-panel">
+          <a href="${waLink(product)}" class="btn-wa-product" target="_blank" rel="noopener">
+            <span class="wa-icon">💬</span>
+            Pedir por WhatsApp
+          </a>
+          <a href="../../#catalogo" class="btn-back-catalog">
+            ← Ver todos los desayunos
+          </a>
+          <div class="product-share-row">
+            <span class="product-share-label">Compartir</span>
+            <a href="${waShareLink(product)}" class="share-icon-btn" target="_blank" rel="noopener" title="Compartir por WhatsApp">💬</a>
+            <button class="share-icon-btn" id="shareCopyBtn" title="Copiar enlace">🔗</button>
           </div>
         </div>
+
       </div>
 
     </div>
   </div>
 </section>
-
-${galleryHTML}
 
 <!-- PRODUCTOS RELACIONADOS -->
 <section class="product-related">

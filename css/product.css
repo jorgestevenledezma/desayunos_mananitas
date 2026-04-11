@@ -294,8 +294,31 @@
   margin-top: 16px;
 }
 
-/* ===== CTA PANEL (derecha en desktop) ===== */
-.product-cta-panel {
+/* ===== GALERÍA EN COLUMNA DERECHA ===== */
+.product-gallery-panel {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.product-gallery-panel .gallery-main {
+  border-radius: 20px 20px 0 0;
+  margin-bottom: 0;
+}
+
+.product-gallery-panel .gallery-thumbs {
+  background: #f9f0f4;
+  padding: 10px;
+  border-radius: 0 0 20px 20px;
+  gap: 8px;
+}
+
+/* ===== PANEL DE ACCIÓN (derecha en desktop) ===== */
+.product-action-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   position: sticky;
   top: 100px;
   opacity: 0;
@@ -303,51 +326,50 @@
   transition: all 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s;
 }
 
-.product-cta-panel.visible {
+.product-action-panel.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.product-price-card {
-  background: white;
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 8px 40px rgba(196,80,122,0.14);
-  border: 1px solid var(--pink-light);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.product-price-label {
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.3rem;
-  color: var(--pink-main);
-  margin-bottom: 4px;
-}
-
-.product-price-main {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--pink-deep);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.product-price-delivery {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  margin-bottom: 20px;
-}
-
-.product-price-alt {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  font-style: italic;
-  margin-bottom: 20px;
+/* Fila de compartir compacta */
+.product-share-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
   background: var(--pink-pale);
-  padding: 8px 12px;
-  border-radius: 10px;
+  border-radius: 50px;
+  justify-content: center;
+}
+
+.product-share-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.share-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.25s;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.share-icon-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 14px rgba(196,80,122,0.25);
 }
 
 .btn-wa-product {

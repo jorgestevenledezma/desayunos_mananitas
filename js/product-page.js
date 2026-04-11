@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15 });
 
   document.querySelectorAll(
-    '.product-includes-list li, .product-decoration-box, .product-cta-panel, .related-card'
+    '.product-includes-list li, .product-decoration-box, .product-action-panel, .related-card'
   ).forEach(el => observer.observe(el));
 
   // ── Navbar scroll ────────────────────────────────────────────
