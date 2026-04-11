@@ -85,6 +85,7 @@
     }
 
     grid.innerHTML = list.map(renderCard).join('');
+    grid.style.minHeight = '';   // CLS: libera el espacio reservado
     grid.querySelectorAll('.product-card').forEach(function (el) {
       fadeObserver.observe(el);
     });

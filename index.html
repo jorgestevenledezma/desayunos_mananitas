@@ -240,9 +240,12 @@
 <!-- Preconnect & Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600;700&family=Great+Vibes&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<!-- Fuentes: carga no bloqueante (LCP) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600;700&family=Great+Vibes&family=Syne:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600;700&family=Great+Vibes&family=Syne:wght@700;800&display=swap"></noscript>
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/sections.css">
@@ -287,7 +290,7 @@
 <!-- HERO -->
 <section class="hero" aria-label="Presentación de Desayunos Mañanitas">
   <div class="hero-content">
-    <img src="img/logo-redondo-rosado-claro.png" alt="Desayunos Mañanitas - Desayunos y brunch sorpresa a domicilio en Cali, Valle del Cauca" class="hero-logo" width="250" height="250" loading="eager">
+    <img src="img/logo-redondo-rosado-claro.png" alt="Desayunos Mañanitas - Desayunos y brunch sorpresa a domicilio en Cali, Valle del Cauca" class="hero-logo" width="250" height="250" loading="eager" fetchpriority="high" decoding="async">
     <h1 class="hero-tagline">Desayunos Mañanitas</h1>
     <p class="hero-title">Sorprende a quien más quieres con un desayuno <em>mágico</em> a domicilio</p>
     <p class="hero-subtitle">Desayunos y brunch artesanales, preparados con amor e ingredientes frescos. Entregamos la sorpresa perfecta en Cali y alrededores.</p>

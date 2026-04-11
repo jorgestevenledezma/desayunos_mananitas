@@ -131,32 +131,6 @@ function buildHTML(product, related, photos) {
   window.GALLERY_NAME   = "${product.name}";
 </script>` : '';
 
-  // ── Galería en el cuerpo de la página ───────────────────────
-  const galleryHTML = hasPhotos ? `
-<section class="product-gallery">
-  <div class="gallery-container">
-    <div class="gallery-header">
-      <div class="gallery-label">Fotografías</div>
-      <h2 class="gallery-title">Así llega tu desayuno</h2>
-    </div>
-
-    <div class="gallery-main" id="galleryMain">
-      <img src="img/${photos[0]}" alt="${product.name}" class="gallery-main-img" id="galleryMainImg" loading="lazy">
-      ${photos.length > 1 ? `
-      <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Anterior">‹</button>
-      <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Siguiente">›</button>
-      <div class="gallery-counter"><span id="galleryIdx">1</span> / ${photos.length}</div>` : ''}
-    </div>
-
-    ${photos.length > 1 ? `
-    <div class="gallery-thumbs">
-      ${photos.map((p, i) => `
-      <button class="gallery-thumb ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="Foto ${i + 1}">
-        <img src="img/${p}" alt="${product.name} foto ${i + 1}" loading="lazy">
-      </button>`).join('')}
-    </div>` : ''}
-  </div>
-</section>` : '';
 
 
   const relatedHTML = related.map(r => {
@@ -179,10 +153,6 @@ function buildHTML(product, related, photos) {
 
   const noteHTML = product.note
     ? `<div class="product-note">📌 ${product.note}</div>`
-    : '';
-
-  const priceAltCardHTML = product.priceAlt
-    ? `<div class="product-price-alt">Sin libro de citas: ${formatPrice(product.priceAlt)}</div>`
     : '';
 
   // Schema.org Product + BreadcrumbList
@@ -281,6 +251,9 @@ ${schemaBreadcrumb}
   gtag('config', 'G-RBQKCWQLMN');
 </script>
 
+<!-- Preload LCP image -->
+${hasPhotos ? `<link rel="preload" href="img/${photos[0]}" as="image" fetchpriority="high">` : ''}
+
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
 <link rel="apple-touch-icon" sizes="60x60" href="../../img/apple-icon-60x60.png">
@@ -289,7 +262,9 @@ ${schemaBreadcrumb}
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Great+Vibes&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Great+Vibes&display=swap"></noscript>
 
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/base.css">
@@ -351,7 +326,7 @@ ${lightboxHTML}
         <!-- Galería de fotos -->
         <div class="product-gallery-panel">
           <div class="gallery-main" id="galleryMain">
-            <img src="img/${photos[0]}" alt="${product.name}" class="gallery-main-img" id="galleryMainImg" loading="lazy">
+            <img src="img/${photos[0]}" alt="${product.name}" class="gallery-main-img" id="galleryMainImg" loading="eager" fetchpriority="high" decoding="async">
             ${photos.length > 1 ? `
             <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Anterior">‹</button>
             <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Siguiente">›</button>

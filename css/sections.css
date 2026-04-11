@@ -307,12 +307,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 28px;
+  /* CLS: reserva espacio antes de que JS rellene las tarjetas */
+  min-height: 900px;
 }
 
 /* ===== OCCASIONS ===== */
 .occasions {
   background: linear-gradient(170deg, white 0%, var(--pink-pale) 100%);
   padding: 80px 24px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
 .occasions-grid {
   max-width: 1000px;
@@ -361,6 +365,8 @@
 /* ===== DELIVERY ===== */
 .delivery {
   background: white;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
 }
 .delivery-container {
   max-width: 900px;
@@ -405,6 +411,8 @@
 /* ===== ABOUT ===== */
 .about {
   background: linear-gradient(170deg, var(--pink-cream) 0%, var(--pink-pale) 100%);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 450px;
 }
 .about-content {
   max-width: 800px;
@@ -558,6 +566,8 @@
 .faq {
   background: linear-gradient(170deg, var(--pink-cream) 0%, var(--pink-pale) 100%);
   padding: 80px 24px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
 }
 .faq-container {
   max-width: 750px;
@@ -627,6 +637,8 @@
 .instagram-section {
   background: linear-gradient(170deg, var(--pink-pale) 0%, white 100%);
   padding: 80px 24px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
 .instagram-grid {
   max-width: 1100px;
@@ -733,6 +745,8 @@
   padding: 80px 24px;
   position: relative;
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 300px;
 }
 .cta-section::before {
   content: '';
