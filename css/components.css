@@ -167,11 +167,13 @@
   padding: 24px;
 }
 .card-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
   color: var(--text-dark);
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
 }
 .card-includes {
   margin-bottom: 16px;
