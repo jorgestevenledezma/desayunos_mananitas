@@ -32,6 +32,16 @@ function col(row, key) {
   return val !== undefined && val !== null && val !== '' ? String(val).trim() : null;
 }
 
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // quitar tildes
+    .replace(/[^a-z0-9\s-]/g, '')                     // solo letras, números, espacios, guiones
+    .trim()
+    .replace(/\s+/g, '-')                              // espacios → guión
+    .replace(/-+/g, '-');                              // guiones dobles → uno
+}
+
 function buildIncludes(row) {
   return [1,2,3,4,5,6,7]
     .map(n => col(row, `Incluye ${n}`))
@@ -39,9 +49,10 @@ function buildIncludes(row) {
 }
 
 const PRODUCTS = rows.map(row => {
+  const name = col(row, 'Nombre') || '';
   const p = {
-    id         : col(row, 'ID (no cambiar)'),
-    name       : col(row, 'Nombre'),
+    id         : col(row, 'ID (no cambiar)') || slugify(name),
+    name       : name,
     price      : Number(col(row, 'Precio')) || 0,
     emoji      : col(row, 'Emoji') || '🍳',
     category   : col(row, 'Categoría') || 'economico',
@@ -63,14 +74,22 @@ const PRODUCTS = rows.map(row => {
   return p;
 });
 
-// Validar que no haya IDs duplicados ni vacíos
-const ids = PRODUCTS.map(p => p.id);
-const missing = PRODUCTS.filter(p => !p.id);
-const dupes   = ids.filter((id, i) => ids.indexOf(id) !== i);
+// Validar IDs — avisar de los auto-generados, fallar solo si hay duplicados o nombre vacío
+const ids     = PRODUCTS.map(p => p.id);
+const sinNombre = PRODUCTS.filter(p => !p.id);
+const dupes     = ids.filter((id, i) => ids.indexOf(id) !== i);
+const autoIds   = rows
+  .filter(row => !col(row, 'ID (no cambiar)') && col(row, 'Nombre'))
+  .map(row => slugify(col(row, 'Nombre')));
 
-if (missing.length) {
-  console.error('❌ Hay productos sin ID. Revisa la columna "ID (no cambiar)".');
+if (sinNombre.length) {
+  console.error('❌ Hay productos sin nombre ni ID. Completa la columna "Nombre".');
   process.exit(1);
+}
+if (autoIds.length) {
+  console.warn(`⚠️  IDs auto-generados para ${autoIds.length} producto(s) nuevo(s):`);
+  autoIds.forEach(id => console.warn(`   → ${id}`));
+  console.warn('   Copia estos IDs en la columna "ID (no cambiar)" del Excel para futuras ediciones.');
 }
 if (dupes.length) {
   console.error(`❌ IDs duplicados: ${dupes.join(', ')}`);

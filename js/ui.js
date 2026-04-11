@@ -30,22 +30,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// ===== PRODUCT FILTER =====
-function filterProducts(category) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-
-  document.querySelectorAll('.product-card').forEach(card => {
-    const cat = card.dataset.category;
-    if (category === 'all' || cat === category) {
-      card.style.display = '';
-      card.style.animation = 'floatIn 0.5s ease-out forwards';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {

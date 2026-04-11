@@ -210,9 +210,54 @@
 .catalog-filters {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.filter-category {
+  display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 48px;
+  justify-content: center;
+}
+
+.filter-sort-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.sort-select {
+  padding: 10px 20px;
+  border: 2px solid var(--pink-soft);
+  border-radius: 50px;
+  background: white;
+  color: var(--text-body);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c4507a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.sort-select:hover, .sort-select:focus {
+  border-color: var(--pink-main);
+  box-shadow: 0 4px 15px rgba(196,80,122,0.15);
+}
+
+.catalog-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
 }
 .filter-btn {
   padding: 10px 24px;
