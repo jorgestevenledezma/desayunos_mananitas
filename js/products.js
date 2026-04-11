@@ -1,6 +1,7 @@
 /**
  * DESAYUNOS MAÑANITAS — Catálogo de productos
- * Generado desde productos_2026.xlsx
+ * Generado automáticamente desde productos_2026.xlsx
+ * Para editar: abre el Excel, modifica y corre: node import-excel.js
  */
 
 const PRODUCTS = [
@@ -334,6 +335,7 @@ const PRODUCTS = [
     name: 'Brunch Amor de Pelicula',
     price: 250000,
     priceAlt: 210000,
+    priceAltLabel: '',
     emoji: '🎥',
     category: 'premium',
     badge: '🎬 Especial',
@@ -436,7 +438,7 @@ const PRODUCTS = [
 
   {
     id: 'brunch-je-taime',
-    name: "Brunch Je t'aime",
+    name: 'Brunch Je t\'aime',
     price: 320000,
     emoji: '🥂',
     category: 'premium',
@@ -478,4 +480,5 @@ const PRODUCTS = [
   }
 ];
 
-if (typeof module !== "undefined") module.exports = PRODUCTS;
+// Para uso en Node.js (generate.js)
+if (typeof module !== 'undefined') module.exports = PRODUCTS;
