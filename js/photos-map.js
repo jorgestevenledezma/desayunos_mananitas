@@ -2,16 +2,16 @@
 var PHOTOS_MAP = {
   "mini-brunch": "productos/mini-brunch/img/WhatsApp%20Image%202026-04-12%20at%202.42.44%20PM%20(1).jpeg",
   "brunch-el-rey-del-cafe": "productos/brunch-el-rey-del-cafe/img/Mini%20brunch%20(2).jpeg",
-  "brunch-express": null,
+  "brunch-express": "productos/brunch-express/img/WhatsApp%20Image%202026-04-12%20at%201.59.10%20PM-1.jpeg",
   "brunch-capitulo-de-pelicula": "productos/brunch-capitulo-de-pelicula/img/WhatsApp%20Image%202026-04-12%20at%2012.19.59%20PM.jpeg",
-  "petit-brunch": null,
-  "brunch-capitulo-de-amor": null,
+  "petit-brunch": "productos/petit-brunch/img/WhatsApp%20Image%202026-04-12%20at%203.04.39%20PM.jpeg",
+  "brunch-capitulo-de-amor": "productos/brunch-capitulo-de-amor/img/WhatsApp%20Image%202026-04-12%20at%2012.15.01%20PM.jpeg",
   "brunch-brisa-de-ternura": "productos/brunch-brisa-de-ternura/img/WhatsApp%20Image%202026-04-12%20at%2012.10.31%20PM%20(1).jpeg",
   "royal-brunch": null,
   "brunch-coquette-clasico": "productos/brunch-coquette-clasico/img/WhatsApp%20Image%202026-04-12%20at%201.42.59%20PM%20(1).jpeg",
-  "brunch-le-petit-waffle": null,
+  "brunch-le-petit-waffle": "productos/brunch-le-petit-waffle/img/WhatsApp%20Image%202026-04-12%20at%202.14.27%20PM%20(1).jpeg",
   "brunch-oliva": "productos/brunch-oliva/img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg",
-  "brunch-mes-amies": null,
+  "brunch-mes-amies": "productos/brunch-mes-amies/img/WhatsApp%20Image%202026-04-12%20at%202.19.29%20PM.jpeg",
   "brunch-chic": "productos/brunch-chic/img/WhatsApp%20Image%202026-04-12%20at%2012.28.24%20PM%20(1).jpeg",
   "brunch-amelie": "productos/brunch-amelie/img/WhatsApp%20Image%202026-04-12%20at%2011.58.47%20AM%20(1).jpeg",
   "brunch-cherie": "productos/brunch-cherie/img/WhatsApp%20Image%202026-04-12%20at%2012.26.28%20PM%20(1).jpeg",
@@ -22,5 +22,5 @@ var PHOTOS_MAP = {
   "brunch-dulce-amanecer": "productos/brunch-dulce-amanecer/img/WhatsApp%20Image%202026-04-12%20at%201.47.36%20PM%20(1).jpeg",
   "brunch-coquette": "productos/brunch-coquette/img/WhatsApp%20Image%202026-04-12%20at%201.28.23%20PM.jpeg",
   "brunch-je-taime": "productos/brunch-je-taime/img/WhatsApp%20Image%202026-04-12%20at%202.08.18%20PM%20(1).jpeg",
-  "brunch-kk": null
+  "brunch-kk": "productos/brunch-kk/img/WhatsApp%20Image%202026-04-12%20at%202.11.54%20PM.jpeg"
 };
