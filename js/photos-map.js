@@ -7,7 +7,7 @@ var PHOTOS_MAP = {
   "petit-brunch": "productos/petit-brunch/img/WhatsApp%20Image%202026-04-12%20at%203.04.39%20PM.jpeg",
   "brunch-capitulo-de-amor": "productos/brunch-capitulo-de-amor/img/WhatsApp%20Image%202026-04-12%20at%2012.15.01%20PM.jpeg",
   "brunch-brisa-de-ternura": "productos/brunch-brisa-de-ternura/img/WhatsApp%20Image%202026-04-12%20at%2012.10.31%20PM%20(1).jpeg",
-  "royal-brunch": null,
+  "royal-brunch": "productos/royal-brunch/img/WhatsApp%20Image%202026-04-12%20at%203.11.55%20PM%20(1).jpeg",
   "brunch-coquette-clasico": "productos/brunch-coquette-clasico/img/WhatsApp%20Image%202026-04-12%20at%201.42.59%20PM%20(1).jpeg",
   "brunch-le-petit-waffle": "productos/brunch-le-petit-waffle/img/WhatsApp%20Image%202026-04-12%20at%202.14.27%20PM%20(1).jpeg",
   "brunch-oliva": "productos/brunch-oliva/img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg",
