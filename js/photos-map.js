@@ -18,7 +18,7 @@ var PHOTOS_MAP = {
   "brunch-clasicc": "productos/brunch-clasicc/img/WhatsApp%20Image%202026-04-12%20at%2012.32.35%20PM%20(1).jpeg",
   "brunch-amor-de-pelicula": "productos/brunch-amor-de-pelicula/img/WhatsApp%20Image%202026-04-12%20at%2012.06.20%20PM.jpeg",
   "brunch-premium": "productos/brunch-premium/img/WhatsApp%20Image%202026-04-12%20at%202.40.14%20PM.jpeg",
-  "brunch-criollo-chic": null,
+  "brunch-criollo-chic": "productos/brunch-criollo-chic/img/WhatsApp%20Image%202026-04-12%20at%201.44.21%20PM%20(1).jpeg",
   "brunch-dulce-amanecer": "productos/brunch-dulce-amanecer/img/WhatsApp%20Image%202026-04-12%20at%201.47.36%20PM%20(1).jpeg",
   "brunch-coquette": "productos/brunch-coquette/img/WhatsApp%20Image%202026-04-12%20at%201.28.23%20PM.jpeg",
   "brunch-je-taime": "productos/brunch-je-taime/img/WhatsApp%20Image%202026-04-12%20at%202.08.18%20PM%20(1).jpeg",
