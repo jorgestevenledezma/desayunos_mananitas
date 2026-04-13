@@ -127,7 +127,7 @@
 </script>
 
 <!-- Preload LCP image -->
-
+<link rel="preload" href="img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg" as="image" fetchpriority="high">
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
@@ -172,16 +172,16 @@
   </div>
 </nav>
 
-<section class="product-hero product-hero--gradient">
-  <div class="product-hero-bg" style="background:linear-gradient(135deg, #e8f5e9, #c8e6c9, #a5d6a7);background-size:400% 400%;"></div>
-  <div class="hero-bubble"></div><div class="hero-bubble"></div>
-  <div class="hero-bubble"></div><div class="hero-bubble"></div>
-  <div class="hero-bubble"></div>
+
+<section class="product-hero product-hero--photo" id="productHero">
+  <div class="hero-photo-bg" id="heroBg" style="background-image:url('img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg')"></div>
+  <div class="hero-photo-overlay"></div>
+
   <div class="product-breadcrumb">
     <a href="../../#catalogo">← Volver al catálogo</a>
   </div>
-  <div class="product-hero-emoji">🫒</div>
-  <div class="product-hero-card">
+
+  <div class="hero-photo-content">
     
     <h1 class="product-hero-name">Brunch Oliva</h1>
     <div class="product-hero-price-wrap">
@@ -189,9 +189,26 @@
       <span class="product-hero-price-note">+ domicilio</span>
     </div>
     
+    <a href="https://wa.me/573045236602?text=Hola%2C%20estoy%20interesado%20en%20el%20Brunch%20Oliva%20(%24160.000)" class="btn-wa-hero" target="_blank" rel="noopener">
+      💬 Pedir por WhatsApp
+    </a>
   </div>
 </section>
 
+<div class="gallery-lightbox" id="galleryLightbox">
+  <div class="lightbox-overlay" id="lightboxOverlay"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img src="" alt="Brunch Oliva" class="lightbox-img" id="lightboxImg">
+    
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+  </div>
+</div>
+<script>
+  window.GALLERY_PHOTOS = ["img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg","img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(2).jpeg","img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM.jpeg"];
+  window.GALLERY_NAME   = "Brunch Oliva";
+</script>
 
 <!-- CONTENIDO PRINCIPAL -->
 <section class="product-main">
@@ -220,6 +237,29 @@
       <div class="product-right">
 
         
+        <!-- Galería de fotos -->
+        <div class="product-gallery-panel">
+          <div class="gallery-main" id="galleryMain">
+            <img src="img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg" alt="Brunch Oliva" class="gallery-main-img" id="galleryMainImg" loading="eager" fetchpriority="high" decoding="async">
+            
+            <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Anterior">‹</button>
+            <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Siguiente">›</button>
+            <div class="gallery-counter"><span id="galleryIdx">1</span> / 3</div>
+          </div>
+          
+          <div class="gallery-thumbs">
+            
+            <button class="gallery-thumb active" data-idx="0" aria-label="Foto 1">
+              <img src="img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(1).jpeg" alt="Brunch Oliva foto 1" loading="lazy">
+            </button>
+            <button class="gallery-thumb " data-idx="1" aria-label="Foto 2">
+              <img src="img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM%20(2).jpeg" alt="Brunch Oliva foto 2" loading="lazy">
+            </button>
+            <button class="gallery-thumb " data-idx="2" aria-label="Foto 3">
+              <img src="img/WhatsApp%20Image%202026-04-12%20at%202.38.15%20PM.jpeg" alt="Brunch Oliva foto 3" loading="lazy">
+            </button>
+          </div>
+        </div>
 
         <!-- Acción: un solo botón + compartir compacto -->
         <div class="product-action-panel">
