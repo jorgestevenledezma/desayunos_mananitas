@@ -539,6 +539,30 @@
   overflow: hidden;
 }
 
+.related-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.related-card:hover .related-card-photo { transform: scale(1.06); }
+.related-card-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.3));
+  z-index: 1;
+}
+.related-card-emoji--photo {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 1.4rem;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
 .related-card-emoji {
   font-size: 3.5rem;
   position: relative;

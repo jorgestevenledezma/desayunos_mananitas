@@ -60,7 +60,7 @@ function getRelated(product, all) {
 
 // ── Template HTML ────────────────────────────────────────────────────────────
 
-function buildHTML(product, related, photos) {
+function buildHTML(product, related, photos, photosMap) {
   const descText = product.includes.slice(0, 3).join(', ');
   const canonicalUrl = `${BASE_URL}/productos/${product.id}/`;
 
@@ -135,10 +135,14 @@ function buildHTML(product, related, photos) {
 
   const relatedHTML = related.map(r => {
     const previewItems = r.includes.slice(0, 2).join(' · ');
+    const rPhoto = photosMap[r.id];
+    const rVisual = rPhoto
+      ? `<img src="../../${rPhoto}" alt="${r.name}" class="related-card-photo" loading="lazy"><div class="related-card-photo-overlay"></div><span class="related-card-emoji related-card-emoji--photo">${r.emoji}</span>`
+      : `<span class="related-card-emoji">${r.emoji}</span>`;
     return `
     <a href="../../productos/${r.id}/" class="related-card fade-related">
-      <div class="related-card-visual" style="${r.gradient ? `background: ${r.gradient}` : ''}">
-        <span class="related-card-emoji">${r.emoji}</span>
+      <div class="related-card-visual" style="${rPhoto ? '' : (r.gradient ? `background: ${r.gradient}` : '')}">
+        ${rVisual}
       </div>
       <div class="related-card-body">
         <div class="related-card-name">${r.name}</div>
@@ -419,23 +423,27 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 }
 
 let generated = 0;
-const photosMap = {};
 
+// Primera pasada: escanear todas las fotos
+const photosMap = {};
+PRODUCTS.forEach(product => {
+  const photos = scanPhotos(product.id);
+  photosMap[product.id] = photos.length > 0
+    ? `productos/${product.id}/img/${photos[0]}`
+    : null;
+});
+
+// Segunda pasada: generar HTML con photosMap completo
 PRODUCTS.forEach(product => {
   const dir = path.join(OUTPUT_DIR, product.id);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
   const photos  = scanPhotos(product.id);
   const related = getRelated(product, PRODUCTS);
-  const html    = buildHTML(product, related, photos);
+  const html    = buildHTML(product, related, photos, photosMap);
   const file    = path.join(dir, 'index.html');
 
   fs.writeFileSync(file, html, 'utf8');
-
-  // Guardar primera foto para el mapa del catálogo
-  photosMap[product.id] = photos.length > 0
-    ? `productos/${product.id}/img/${photos[0]}`
-    : null;
 
   const photoInfo = photos.length > 0 ? ` (${photos.length} foto${photos.length > 1 ? 's' : ''})` : '';
   console.log(`✓ productos/${product.id}/${photoInfo}`);
