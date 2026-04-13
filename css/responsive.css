@@ -66,4 +66,39 @@
     width: 180px; height: 180px;
   }
   .card-visual { height: 140px; }
+
+  /* ── Carrusel móvil: features & steps ── */
+  .features-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    transition: transform 0.4s cubic-bezier(0.25,1,0.5,1);
+    will-change: transform;
+  }
+  .features-grid .feature-item {
+    min-width: 100%;
+    padding: 8px 24px;
+  }
+  .features-dots {
+    display: flex;
+  }
+
+  .steps-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    transition: transform 0.4s cubic-bezier(0.25,1,0.5,1);
+    will-change: transform;
+  }
+  .steps-grid .step-card {
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+  }
+  .steps-grid .step-connector {
+    display: none;
+  }
+  .steps-dots {
+    display: flex;
+  }
 }

@@ -71,7 +71,7 @@
   }, { threshold: 0.08 });
 
   function render() {
-    var list = PRODUCTS.slice();
+    var list = PRODUCTS.filter(function (p) { return p.active !== false; });
 
     if (activeCategory !== 'all') {
       list = list.filter(function (p) { return p.category === activeCategory; });

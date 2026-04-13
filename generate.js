@@ -424,9 +424,11 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 
 let generated = 0;
 
-// Primera pasada: escanear todas las fotos
+const activeProducts = PRODUCTS.filter(p => p.active !== false);
+
+// Primera pasada: escanear todas las fotos (solo productos activos)
 const photosMap = {};
-PRODUCTS.forEach(product => {
+activeProducts.forEach(product => {
   const photos = scanPhotos(product.id);
   photosMap[product.id] = photos.length > 0
     ? `productos/${product.id}/img/${photos[0]}`
@@ -434,12 +436,12 @@ PRODUCTS.forEach(product => {
 });
 
 // Segunda pasada: generar HTML con photosMap completo
-PRODUCTS.forEach(product => {
+activeProducts.forEach(product => {
   const dir = path.join(OUTPUT_DIR, product.id);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
   const photos  = scanPhotos(product.id);
-  const related = getRelated(product, PRODUCTS);
+  const related = getRelated(product, activeProducts);
   const html    = buildHTML(product, related, photos, photosMap);
   const file    = path.join(dir, 'index.html');
 

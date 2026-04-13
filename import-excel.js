@@ -50,8 +50,10 @@ function buildIncludes(row) {
 
 const PRODUCTS = rows.map(row => {
   const name = col(row, 'Nombre') || '';
+  const activoVal = col(row, 'Activo');
   const p = {
     id         : col(row, 'ID (no cambiar)') || slugify(name),
+    active     : activoVal === null || activoVal.toUpperCase() !== 'NO',
     name       : name,
     price      : Number(col(row, 'Precio')) || 0,
     emoji      : col(row, 'Emoji') || '🍳',
@@ -106,6 +108,7 @@ const lines = PRODUCTS.map(p => {
   const includes = p.includes.map(i => `      '${esc(i)}'`).join(',\n');
   return `  {
     id: '${esc(p.id)}',
+    active: ${p.active},
     name: '${esc(p.name)}',
     price: ${p.price},${extras}
     emoji: '${esc(p.emoji)}',

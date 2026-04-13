@@ -41,6 +41,77 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ===== CARRUSEL MÓVIL (features & steps) =====
+(function () {
+  function initCarousel(gridId, dotsId, itemSelector) {
+    var grid = document.getElementById(gridId);
+    var dotsWrap = document.getElementById(dotsId);
+    if (!grid || !dotsWrap) return;
+
+    function isMobile() { return window.innerWidth < 768; }
+
+    var items = Array.from(grid.querySelectorAll(itemSelector));
+    var current = 0;
+    var dots = [];
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      dots = [];
+      items.forEach(function (_, i) {
+        var d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Ir al elemento ' + (i + 1));
+        d.addEventListener('click', function () { goTo(i); });
+        dotsWrap.appendChild(d);
+        dots.push(d);
+      });
+    }
+
+    function goTo(idx) {
+      current = (idx + items.length) % items.length;
+      grid.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    // Swipe táctil
+    var sx = 0;
+    grid.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    grid.addEventListener('touchend', function (e) {
+      var dx = sx - e.changedTouches[0].clientX;
+      if (Math.abs(dx) > 40) goTo(current + (dx > 0 ? 1 : -1));
+    }, { passive: true });
+
+    // Auto-avance cada 4s
+    var timer;
+    function startAuto() { timer = setInterval(function () { goTo(current + 1); }, 4000); }
+    function stopAuto()  { clearInterval(timer); }
+    grid.addEventListener('touchstart', stopAuto, { passive: true });
+    grid.addEventListener('touchend',   startAuto, { passive: true });
+
+    function setup() {
+      if (isMobile()) {
+        buildDots();
+        goTo(0);
+        startAuto();
+      } else {
+        grid.style.transform = '';
+        dotsWrap.innerHTML = '';
+        stopAuto();
+      }
+    }
+
+    setup();
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setup, 150);
+    });
+  }
+
+  initCarousel('featuresGrid', 'featuresDots', '.feature-item');
+  initCarousel('stepsGrid',    'stepsDots',    '.step-card');
+})();
+
 // ===== FAQ ACCORDION =====
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {

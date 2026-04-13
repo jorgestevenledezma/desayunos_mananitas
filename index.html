@@ -301,63 +301,6 @@
   </div>
 </section>
 
-<!-- FEATURES BAR -->
-<div class="features-bar">
-  <div class="features-grid">
-    <div class="feature-item fade-up">
-      <div class="feature-icon">🌅</div>
-      <div class="feature-label">Entrega Temprana</div>
-      <div class="feature-desc">Desde las 5:30 a.m.</div>
-    </div>
-    <div class="feature-item fade-up">
-      <div class="feature-icon">🍳</div>
-      <div class="feature-label">Ingredientes Frescos</div>
-      <div class="feature-desc">Preparados con amor</div>
-    </div>
-    <div class="feature-item fade-up">
-      <div class="feature-icon">🎀</div>
-      <div class="feature-label">Personalizado</div>
-      <div class="feature-desc">Tarjetas y decoración</div>
-    </div>
-    <div class="feature-item fade-up">
-      <div class="feature-icon">🚚</div>
-      <div class="feature-label">A Domicilio</div>
-      <div class="feature-desc">Cali, Jamundí y más</div>
-    </div>
-  </div>
-</div>
-
-<!-- CÓMO FUNCIONA -->
-<section class="how-it-works" id="como-funciona">
-  <div class="section-header fade-up">
-    <div class="section-label">Muy Fácil</div>
-    <h2 class="section-title">¿Cómo Funciona?</h2>
-    <p class="section-desc">En solo 3 pasos tendrás la sorpresa perfecta en la puerta de tu ser querido.</p>
-  </div>
-  <div class="steps-grid">
-    <div class="step-card fade-up">
-      <div class="step-number">1</div>
-      <div class="step-icon">🎁</div>
-      <h3 class="step-title">Elige tu Desayuno</h3>
-      <p class="step-desc">Explora nuestro catálogo y escoge el brunch perfecto según la ocasión y tu presupuesto.</p>
-    </div>
-    <div class="step-connector fade-up">💕</div>
-    <div class="step-card fade-up">
-      <div class="step-number">2</div>
-      <div class="step-icon">✍️</div>
-      <h3 class="step-title">Personaliza</h3>
-      <p class="step-desc">Cuéntanos la fecha, hora, dirección y mensaje especial para la tarjeta personalizada.</p>
-    </div>
-    <div class="step-connector fade-up">💕</div>
-    <div class="step-card fade-up">
-      <div class="step-number">3</div>
-      <div class="step-icon">🚚</div>
-      <h3 class="step-title">¡Sorpresa Entregada!</h3>
-      <p class="step-desc">Llegamos puntualmente con tu desayuno preparado con amor. ¡La sonrisa está garantizada!</p>
-    </div>
-  </div>
-</section>
-
 <!-- CATALOG -->
 <section class="catalog" id="catalogo">
   <div class="section-header fade-up">
@@ -384,6 +327,70 @@
 
   <div class="catalog-grid" id="catalogGrid">
     <!-- Renderizado automáticamente por js/catalog.js -->
+  </div>
+</section>
+
+<!-- FEATURES BAR -->
+<div class="features-bar">
+  <!-- Desktop: grid normal | Móvil: carrusel via JS -->
+  <div class="features-grid" id="featuresGrid">
+    <div class="feature-item">
+      <div class="feature-icon">🌅</div>
+      <div class="feature-label">Entrega Temprana</div>
+      <div class="feature-desc">Desde las 5:30 a.m.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🍳</div>
+      <div class="feature-label">Ingredientes Frescos</div>
+      <div class="feature-desc">Preparados con amor</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🎀</div>
+      <div class="feature-label">Personalizado</div>
+      <div class="feature-desc">Tarjetas y decoración</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-label">A Domicilio</div>
+      <div class="feature-desc">Cali, Jamundí y más</div>
+    </div>
+  </div>
+  <!-- Dots del carrusel móvil -->
+  <div class="features-dots" id="featuresDots" aria-hidden="true"></div>
+</div>
+
+<!-- CÓMO FUNCIONA -->
+<section class="how-it-works" id="como-funciona">
+  <div class="section-header fade-up">
+    <div class="section-label">Muy Fácil</div>
+    <h2 class="section-title">¿Cómo Funciona?</h2>
+    <p class="section-desc">En solo 3 pasos tendrás la sorpresa perfecta en la puerta de tu ser querido.</p>
+  </div>
+  <!-- Desktop: grid | Móvil: carrusel -->
+  <div class="steps-carousel-wrap">
+    <div class="steps-grid" id="stepsGrid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon">🎁</div>
+        <h3 class="step-title">Elige tu Desayuno</h3>
+        <p class="step-desc">Explora nuestro catálogo y escoge el brunch perfecto según la ocasión y tu presupuesto.</p>
+      </div>
+      <div class="step-connector">💕</div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon">✍️</div>
+        <h3 class="step-title">Personaliza</h3>
+        <p class="step-desc">Cuéntanos la fecha, hora, dirección y mensaje especial para la tarjeta personalizada.</p>
+      </div>
+      <div class="step-connector">💕</div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon">🚚</div>
+        <h3 class="step-title">¡Sorpresa Entregada!</h3>
+        <p class="step-desc">Llegamos puntualmente con tu desayuno preparado con amor. ¡La sonrisa está garantizada!</p>
+      </div>
+    </div>
+    <div class="steps-dots" id="stepsDots" aria-hidden="true"></div>
   </div>
 </section>
 

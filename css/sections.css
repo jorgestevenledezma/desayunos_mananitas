@@ -199,6 +199,7 @@
   padding: 40px 24px;
   border-top: 1px solid rgba(232,130,158,0.1);
   border-bottom: 1px solid rgba(232,130,158,0.1);
+  overflow: hidden;
 }
 .features-grid {
   max-width: 1000px;
@@ -227,11 +228,32 @@
   font-size: 0.82rem;
   color: var(--text-light);
 }
+/* Dots carrusel móvil */
+.features-dots, .steps-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.features-dots .dot, .steps-dots .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--pink-soft);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.features-dots .dot.active, .steps-dots .dot.active {
+  background: var(--pink-main);
+  transform: scale(1.3);
+}
 
 /* ===== HOW IT WORKS ===== */
 .how-it-works {
   background: white;
   padding: 80px 24px;
+}
+.steps-carousel-wrap {
+  overflow: hidden;
 }
 .steps-grid {
   max-width: 1000px;

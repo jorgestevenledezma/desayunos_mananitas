@@ -10,6 +10,7 @@ const PRODUCTS = require('./js/products.js');
 // ── Preparar filas ────────────────────────────────────────────
 const rows = PRODUCTS.map(p => ({
   'ID (no cambiar)'   : p.id,
+  'Activo'            : p.active === false ? 'NO' : 'SI',
   'Nombre'            : p.name,
   'Precio'            : p.price,
   'Precio Alt'        : p.priceAlt || '',
@@ -36,6 +37,7 @@ const ws = XLSX.utils.json_to_sheet(rows);
 // Anchos de columna
 ws['!cols'] = [
   { wch: 32 },  // ID
+  { wch: 8  },  // Activo
   { wch: 28 },  // Nombre
   { wch: 12 },  // Precio
   { wch: 12 },  // Precio Alt
