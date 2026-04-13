@@ -8,12 +8,45 @@ Disallow: /img/favicon.ico
 # Sitemap
 Sitemap: https://www.desayunosmananitas.com/sitemap.xml
 
-# Google
+# ── Motores de búsqueda tradicionales ──
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
-# Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 2
+
+# ── Crawlers de IA — permitir indexación ──
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Gemini-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
