@@ -7,10 +7,11 @@
 const PRODUCTS = [
   {
     id: 'mini-brunch',
+    active: true,
     name: 'Mini Brunch',
     price: 75000,
     emoji: '🍳',
-    category: 'economico',
+    category: 'clasico',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -26,10 +27,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-el-rey-del-cafe',
+    active: true,
     name: 'Brunch El rey del café',
     price: 80000,
     emoji: '☕',
-    category: 'economico',
+    category: 'clasico',
     badge: 'especial para Papá',
     note: 'La decoración es alusiva spara papá.',
     photos: [],
@@ -46,10 +48,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-express',
+    active: true,
     name: 'Brunch Express',
     price: 90000,
     emoji: '🥐',
-    category: 'economico',
+    category: 'clasico',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -66,10 +69,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-capitulo-de-pelicula',
+    active: true,
     name: 'Brunch Capitulo de Pelicula',
     price: 95000,
     emoji: '🎬',
-    category: 'economico',
+    category: 'clasico',
     badge: null,
     note: 'La decoración es alusiva al Amor',
     photos: [],
@@ -78,7 +82,7 @@ const PRODUCTS = [
       'Bebida natural',
       'Mini pancakes  con fresas y sirope',
       'Cupcake',
-      'parfait de yogurt griego, granola artesanal y fruta',
+      'Parfait con yogurt natural fruta y granola',
     ],
     decoration: 'Bolsa Box, tarjeta , tag , lazo decorativo y vaso Mug.',
     gradient: 'linear-gradient(135deg, #f3e5f5, #e1bee7, #ce93d8)',
@@ -86,10 +90,11 @@ const PRODUCTS = [
 
   {
     id: 'petit-brunch',
+    active: true,
     name: 'Petit Brunch',
     price: 100000,
     emoji: '🧇',
-    category: 'economico',
+    category: 'clasico',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -106,10 +111,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-capitulo-de-amor',
+    active: true,
     name: 'Brunch Capitulo de Amor',
     price: 100000,
     emoji: '💖',
-    category: 'economico',
+    category: 'clasico',
     badge: '🌸 Especial Mamá',
     note: 'Desayuno exclusivo para un día especial o cumpleaños de Mamá',
     photos: [],
@@ -127,10 +133,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-brisa-de-ternura',
+    active: true,
     name: 'Brunch Brisa de Ternura',
     price: 110000,
     emoji: '🌸',
-    category: 'economico',
+    category: 'clasico',
     badge: '👩 Solo para Dama',
     note: 'Opción únicamente para dama',
     photos: [],
@@ -146,10 +153,11 @@ const PRODUCTS = [
 
   {
     id: 'royal-brunch',
+    active: true,
     name: 'Royal Brunch',
     price: 150000,
     emoji: '👑',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -159,6 +167,7 @@ const PRODUCTS = [
       'Bowl con mix de frutas',
       'Cupcake',
       'Waffles con fruta , sirope o chocolate Hersheys',
+      'Copa de cristal con parfait Yogurt griego granola y fruta',
     ],
     decoration: 'Bandeja de madera con mantelito de satín, ramillete de astromelias, cubiertos, tarjeta y tag, 2 globos en helio.',
     gradient: 'linear-gradient(135deg, #fce4ec, #e1bee7, #f3e5f5)',
@@ -166,10 +175,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-coquette-clasico',
+    active: true,
     name: 'Brunch Coquette',
     price: 140000,
     emoji: '🍳',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'Exclusivo para mujeres',
     photos: [],
@@ -179,16 +189,17 @@ const PRODUCTS = [
       'Mini Parfait con yogurt natural fruta y granola y cuchara',
       'Mix platanitos Manitoba',
     ],
-    decoration: 'Canastilla organizadora metalica dorada con mantelito moño decorativo, botella de agua de vidirio  estilo coquette,tarjeta y tag',
+    decoration: 'Canastilla organizadora metalica dorada con mantelito ,moño decorativo, botella de agua de vidirio  estilo coquette,tarjeta y tag',
     gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0)',
   },
 
   {
     id: 'brunch-le-petit-waffle',
+    active: true,
     name: 'Brunch le Petit Waffle',
     price: 150000,
     emoji: '🧇',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -204,10 +215,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-oliva',
+    active: true,
     name: 'Brunch Oliva',
     price: 160000,
     emoji: '🫒',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -224,10 +236,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-mes-amies',
+    active: true,
     name: 'Brunch Mes Amies',
     price: 195000,
     emoji: '🌺',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -246,10 +259,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-chic',
+    active: true,
     name: 'Brunch Chic',
     price: 210000,
     emoji: '💎',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -268,10 +282,11 @@ const PRODUCTS = [
 
   {
     id: 'brunch-amelie',
+    active: true,
     name: 'Brunch Amélie',
     price: 220000,
     emoji: '🌹',
-    category: 'medio',
+    category: 'especial',
     badge: null,
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
@@ -283,12 +298,13 @@ const PRODUCTS = [
       'Copa de cristal con parfait de yogurt griego, granola y frutas',
       'Waffles con fruta , sirope o chocolate Hersheys',
     ],
-    decoration: 'Bandeja de madera con mantel de satín, ramillete de astromelias , tarjeta y tag, 3 globos en helio, cubierto, vaso termo para café',
+    decoration: 'Bandeja de madera con mantel de satín,vaso termo para café, ramillete de astromelias , tarjeta y tag, 3 globos en helio, cubierto.',
     gradient: 'linear-gradient(135deg, #fce4ec, #f48fb1, #ec407a)',
   },
 
   {
     id: 'brunch-cherie',
+    active: true,
     name: 'Brunch Chérie',
     price: 245000,
     emoji: '🍷',
@@ -299,7 +315,7 @@ const PRODUCTS = [
     includes: [
       'Plato en microcerámica con wrap de huevitos, jamón, queso, maicitos y vegetales frescos',
       'Bebida natural y caliente',
-      'Bowl en cerámica de corazones con mix de frutas frescas',
+      'Bowl en cerámica con mix de frutas frescas.',
       'Waffles con fruta , sirope o chocolate Hersheys',
       'Torta Vintage',
       'Copa de cristal con parfait de yogurt griego, granola y frutas',
@@ -310,6 +326,7 @@ const PRODUCTS = [
 
   {
     id: 'brunch-clasicc',
+    active: true,
     name: 'Brunch Clasicc',
     price: 250000,
     emoji: '🌹',
@@ -324,14 +341,15 @@ const PRODUCTS = [
       'Waffles con fruta , sirope o chocolate Hersheys',
       'Torta Vintage',
       'Mix de frutas',
-      'Charcutería',
+      'Bowl de Charcutería',
     ],
-    decoration: 'Bandeja de madera con mantel de satín, ramillete de rosas (20–25) y jarrón, tarjeta y tag, 3 globos en helio, cubiertos.',
+    decoration: 'Bandeja de madera con mantel de satín, ramillete de rosas (20–25) , tarjeta y tag, 3 globos en helio, cubiertos.',
     gradient: 'linear-gradient(135deg, #fce4ec, #f48fb1, #ec407a)',
   },
 
   {
     id: 'brunch-amor-de-pelicula',
+    active: true,
     name: 'Brunch Amor de Pelicula',
     price: 250000,
     priceAlt: 210000,
@@ -349,12 +367,13 @@ const PRODUCTS = [
       'Parfait de yogurt griego, granola artesanal y fruta',
       'Torta vintage',
     ],
-    decoration: 'Bandeja de madera con mantelito, tarjeta y tag, taza de cerámica y platico, tapa de cristal, libro de citas, 3 globos en helio',
+    decoration: 'Bandeja de madera con mantelito, libro de citas,tarjeta y tag, taza de cerámica y platico, tapa de cristal, 3 globos en helio',
     gradient: 'linear-gradient(135deg, #e8eaf6, #c5cae9, #9fa8da)',
   },
 
   {
     id: 'brunch-premium',
+    active: true,
     name: 'Brunch Premium',
     price: 270000,
     emoji: '🍾',
@@ -369,12 +388,13 @@ const PRODUCTS = [
       'Copa de cristal con parfait de yogurt griego, granola y frutas',
       'Cajita de alfajores',
     ],
-    decoration: 'Bandeja tipo mesa de madera con mantel de satín, botella de vino tinto, 3 globos en helio, tarjeta y tag, cubiertos y portarretrato',
+    decoration: 'Bandeja tipo mesa de madera con mantel de satín,portarretrato, botella de vino tinto, 3 globos en helio, tarjeta y tag, cubiertos.',
     gradient: 'linear-gradient(135deg, #4a1942, #8b1a4a, #c2185b)',
   },
 
   {
     id: 'brunch-criollo-chic',
+    active: true,
     name: 'Brunch Criollo Chic',
     price: 275000,
     emoji: '🇨🇴',
@@ -390,12 +410,13 @@ const PRODUCTS = [
       'Torta artesanal',
       'bowl de Charcutería',
     ],
-    decoration: 'Ramillete de hortensias y jarrón, bandeja de madera con mantel de satín , cubiertos , tarjeta y tag, Termo de café , 3 globos en helio.',
+    decoration: 'Ramillete de hortensias , Termo de café , bandeja de madera con mantel de satín , cubiertos , tarjeta y tag, 3 globos en helio.',
     gradient: 'linear-gradient(135deg, #efebe9, #d7ccc8, #bcaaa4)',
   },
 
   {
     id: 'brunch-dulce-amanecer',
+    active: true,
     name: 'Brunch Dulce Amanecer',
     price: 280000,
     emoji: '🌅',
@@ -417,6 +438,7 @@ const PRODUCTS = [
 
   {
     id: 'brunch-coquette',
+    active: true,
     name: 'Brunch Coquette premium',
     price: 290000,
     emoji: '🌹',
@@ -427,7 +449,7 @@ const PRODUCTS = [
     includes: [
       'Wrap de maicitos, jamón, queso mozzarella y huevitos revueltos',
       'Bebida natural   o caliente',
-      'Mix de frutas en bowl de cerámica con borde de corazones',
+      'Mix de frutas en bowl de cerámica  (el Bowl que tengamos disponible)',
       'Copa de cristal con parfait de yogurt griego, granola y fruta, con mermelada artesanal',
       'Dos waffles con sirope y frutas frescas',
       'Galleta decorada',
@@ -438,29 +460,31 @@ const PRODUCTS = [
 
   {
     id: 'brunch-je-taime',
+    active: true,
     name: 'Brunch Je t\'aime',
-    price: 320000,
+    price: 280000,
     emoji: '🥂',
     category: 'premium',
     badge: '💕 Romántico',
     note: 'La decoración es alusiva según la ocasión',
     photos: [],
     includes: [
-      'Sándwich con pan de bagel horneado artesanal con arándanos, jamón de pavo, queso Gouda, lechuga y dip de la casa',
-      'Bebida natural   o Capuccino',
-      'Omelette con queso y maíz tierno',
+      'omellet con jamon queso y vegetales 1 croissan',
+      'Capuccino',
+      'Bowl con waffles fruta y sirope',
       'Copa de cristal con parfait de yogurt griego, granola y fruta',
-      'Tortera de cristal con galletas artesanales',
-      'Bowl con waffles con fruta y sirope',
+      'Tortera de cristal con galletas artesanales o alfajores',
+      'Vaso de vidrio con tapa de bambu y pitillo con jugo natural',
     ],
-    decoration: 'Botella de vino rosado, portarretrato, mesa de madera con mantelito, cubiertos, tarjeta y tag, globos en helio',
+    decoration: 'portarretrato, mesa de madera con mantelito, cubiertos, tarjeta y tag, globos en helio',
     gradient: 'linear-gradient(135deg, #fde2e4, #e2ece9, #fad2e1)',
   },
 
   {
     id: 'brunch-kk',
+    active: true,
     name: 'Brunch Expreso de Amor',
-    price: 370000,
+    price: 350000,
     emoji: '👑',
     category: 'premium',
     badge: '👑 Top',
@@ -477,6 +501,40 @@ const PRODUCTS = [
     ],
     decoration: 'Rosas (20–25) y jarrón, prensa francesa, bandeja de madera con mantel de satín y cubierto, tarjeta personalizada, tag y pincho, globos en helio.',
     gradient: 'linear-gradient(135deg, #c9a96e, #e8d5a8, #c9a96e)',
+  },
+
+  {
+    id: 'brunch-le-petit-tresor',
+    active: false,
+    name: 'Brunch le Petit Trésor',
+    price: 0,
+    emoji: '🍳',
+    category: 'clasico',
+    badge: null,
+    note: '',
+    photos: [],
+    includes: [
+,
+    ],
+    decoration: '',
+    gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0)',
+  },
+
+  {
+    id: 'brunch-aventure-matinale',
+    active: false,
+    name: 'Brunch Aventure Matinale',
+    price: 0,
+    emoji: '🍳',
+    category: 'clasico',
+    badge: null,
+    note: '',
+    photos: [],
+    includes: [
+,
+    ],
+    decoration: '',
+    gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0)',
   }
 ];
 

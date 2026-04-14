@@ -15,7 +15,7 @@ Somos un servicio de desayunos sorpresa a domicilio en Cali (Colombia). Ofrecemo
 
 Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
 
-### Categoría Económico (desde $75.000 COP)
+### Categoría Clásico (hasta $120.000 COP)
 - **Mini Brunch** ($75.000): Sándwich de croissant, bebida natural, parfait con yogurt, cupcake
 - **Brunch El Rey del Café** ($80.000): Sándwich de croissant, bebida natural y caliente, parfait
 - **Brunch Express** ($90.000): Sándwich de croissant, bebida natural y caliente, parfait, brownie
@@ -24,7 +24,7 @@ Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
 - **Brunch Capítulo de Amor** ($100.000): Croissant, parfait, bebida, brownie, cupcake
 - **Brunch Brisa de Ternura** ($110.000): Croissant, parfait, bebida, brownie, cupcake, galleta
 
-### Categoría Medio ($140.000 – $215.000 COP)
+### Categoría Especial ($120.000 – $230.000 COP)
 - **Royal Brunch** ($150.000): Croissant, parfait, brownie, crepes con fruta
 - **Brunch Coquette Clásico** ($140.000): Mini torta vintage coquette, alfajores, parfait
 - **Brunch Le Petit Waffle** ($150.000): Waffle belga, parfait, bebida, brownie
@@ -32,7 +32,7 @@ Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
 - **Brunch Mes Amies** ($195.000): Croissant, parfait, waffle, flores, brownie
 - **Brunch Chic** ($210.000): Croissant, parfait, waffle, flores, brownie, torta personal
 
-### Categoría Premium ($220.000 – $370.000 COP)
+### Categoría Premium (más de $230.000 COP)
 - **Brunch Amélie** ($220.000): Croissant, parfait, waffle, flores, brownie, torta, prensa francesa
 - **Brunch Chérie** ($245.000): Croissant, parfait, waffle, flores, brownie, torta, vino
 - **Brunch Clasicc** ($250.000): Charcutería, parfait, waffle, flores, brownie, torta, vino

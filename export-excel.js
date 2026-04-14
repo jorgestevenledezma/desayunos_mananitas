@@ -62,8 +62,8 @@ XLSX.utils.book_append_sheet(wb, ws, 'Productos');
 // Hoja de referencia de categorías
 const catSheet = XLSX.utils.aoa_to_sheet([
   ['Valor',     'Descripción'],
-  ['economico', 'Hasta $120.000'],
-  ['medio',     '$120.000 – $230.000'],
+  ['clasico',   'Hasta $120.000'],
+  ['especial',  '$120.000 – $230.000'],
   ['premium',   'Más de $230.000'],
 ]);
 catSheet['!cols'] = [{ wch: 12 }, { wch: 24 }];

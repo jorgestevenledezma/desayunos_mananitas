@@ -199,7 +199,7 @@ function buildHTML(product, related, photos, photosMap) {
     ]
   }, null, 2);
 
-  const categoryLabel = { economico: 'económico', medio: 'estándar', premium: 'premium' }[product.category] || '';
+  const categoryLabel = { clasico: 'clásico', especial: 'especial', premium: 'premium' }[product.category] || '';
   const metaTitle = `${product.name} a Domicilio en Cali | Desayunos Mañanitas`;
   const metaDesc  = `${product.name}: ${descText}. Desayuno sorpresa ${categoryLabel} desde ${formatPrice(product.price)} + domicilio en Cali, Jamundí y Yumbo. ¡Pide ahora por WhatsApp!`;
 
