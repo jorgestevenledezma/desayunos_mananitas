@@ -22,5 +22,7 @@ var PHOTOS_MAP = {
   "brunch-dulce-amanecer": "productos/brunch-dulce-amanecer/img/WhatsApp%20Image%202026-04-12%20at%201.47.36%20PM%20(1).jpeg",
   "brunch-coquette": "productos/brunch-coquette/img/WhatsApp%20Image%202026-04-12%20at%201.28.23%20PM.jpeg",
   "brunch-je-taime": "productos/brunch-je-taime/img/WhatsApp%20Image%202026-04-12%20at%202.08.18%20PM%20(1).jpeg",
-  "brunch-kk": "productos/brunch-kk/img/WhatsApp%20Image%202026-04-12%20at%202.11.54%20PM.jpeg"
+  "brunch-kk": "productos/brunch-kk/img/WhatsApp%20Image%202026-04-12%20at%202.11.54%20PM.jpeg",
+  "brunch-le-petit-tresor": null,
+  "brunch-aventure-matinale": null
 };
