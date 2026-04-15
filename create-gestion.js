@@ -170,7 +170,7 @@ const refRows = [
   ['Pendiente',   'Nequi',          'Cali',             ''],
   ['Confirmado',  'Transferencia',  'Jamundí',          ''],
   ['Entregado',   '',               'Ciudad del Campo', ''],
-  ['Cancelado',   '',               'Yumbo',            ''],
+  ['Cancelado',   '',               'Candelaria',       ''],
 ];
 PRODUCTS.forEach((p, i) => {
   if (refRows[i + 1]) {
