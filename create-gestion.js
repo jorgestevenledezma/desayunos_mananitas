@@ -146,9 +146,7 @@ const resumenData = [
   ['Producto más vendido',             '=INDEX(Pedidos!F2:F10000,MATCH(MAX(COUNTIF(Pedidos!F2:F10000,Pedidos!F2:F10000)),COUNTIF(Pedidos!F2:F10000,Pedidos!F2:F10000),0))'],
   ['', ''],
   ['Pagos por Nequi',                  '=SUMIF(Pedidos!J2:J10000,"Nequi",Pedidos!I2:I10000)'],
-  ['Pagos por Daviplata',              '=SUMIF(Pedidos!J2:J10000,"Daviplata",Pedidos!I2:I10000)'],
-  ['Pagos en Efectivo',                '=SUMIF(Pedidos!J2:J10000,"Efectivo",Pedidos!I2:I10000)'],
-  ['Pagos por Transferencia',          '=SUMIF(Pedidos!J2:J10000,"Transferencia",Pedidos!I2:I10000)'],
+  ['Pagos por Transferencia Bancolombia', '=SUMIF(Pedidos!J2:J10000,"Transferencia",Pedidos!I2:I10000)'],
 ];
 
 const wsResumen = XLSX.utils.aoa_to_sheet(resumenData);
@@ -169,10 +167,10 @@ const refData = [
 // Aplanar: cada producto en su propia fila en col D
 const refRows = [
   ['Estado', 'Método de Pago', 'Zona', 'Productos (para validación)'],
-  ['Pendiente',   'Nequi',         'Cali',             ''],
-  ['Confirmado',  'Daviplata',     'Jamundí',          ''],
-  ['Entregado',   'Efectivo',      'Ciudad del Campo', ''],
-  ['Cancelado',   'Transferencia', 'Yumbo',            ''],
+  ['Pendiente',   'Nequi',          'Cali',             ''],
+  ['Confirmado',  'Transferencia',  'Jamundí',          ''],
+  ['Entregado',   '',               'Ciudad del Campo', ''],
+  ['Cancelado',   '',               'Yumbo',            ''],
 ];
 PRODUCTS.forEach((p, i) => {
   if (refRows[i + 1]) {
