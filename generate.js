@@ -172,13 +172,20 @@ function buildHTML(product, related, photos, photosMap) {
     : '';
 
   // Schema.org Product + BreadcrumbList
+  const categoryLabel = { clasico: 'clásico', especial: 'especial', premium: 'premium' }[product.category] || '';
+  const metaTitle = `${product.name} a Domicilio en Cali | Desayunos Mañanitas`;
+  const metaDesc  = `${product.name}: ${descText}. Desayuno sorpresa ${categoryLabel} desde ${formatPrice(product.price)} + domicilio en Cali, Jamundí, Candelaria y Ciudad del Campo. ¡Pide ahora por WhatsApp!`;
+  const productImage = hasPhotos
+    ? `${BASE_URL}/productos/${product.id}/img/${photos[0]}`
+    : `${BASE_URL}/img/logo-horizontal-rosado.png`;
+
   const schemaProduct = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "description": `${descText}. Desayuno sorpresa a domicilio en Cali, Jamundí y Yumbo.`,
+    "description": metaDesc,
     "brand": { "@type": "Brand", "name": "Desayunos Mañanitas" },
-    "image": `${BASE_URL}/img/logo-horizontal-rosado.png`,
+    "image": [productImage],
     "sku": product.id,
     "offers": {
       "@type": "Offer",
@@ -186,17 +193,31 @@ function buildHTML(product, related, photos, photosMap) {
       "priceCurrency": "COP",
       "availability": "https://schema.org/InStock",
       "url": canonicalUrl,
+      "priceValidUntil": `${new Date().getFullYear() + 1}-12-31`,
       "seller": {
         "@type": "LocalBusiness",
         "name": "Desayunos Mañanitas",
         "telephone": "+573045236602",
         "address": { "@type": "PostalAddress", "addressLocality": "Cali", "addressRegion": "Valle del Cauca", "addressCountry": "CO" }
       },
-      "areaServed": ["Cali", "Jamundí", "Yumbo", "Ciudad del Campo"],
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "CO",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      },
       "shippingDetails": {
         "@type": "OfferShippingDetails",
-        "shippingRate": { "@type": "MonetaryAmount", "currency": "COP", "minValue": 10000, "maxValue": 30000 },
-        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" } }
+        "shippingRate": { "@type": "MonetaryAmount", "currency": "COP", "minValue": 10000, "maxValue": 40000 },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "CO",
+          "addressRegion": ["Valle del Cauca"]
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+          "transitTime":  { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+        }
       }
     }
   }, null, 2);
@@ -211,10 +232,6 @@ function buildHTML(product, related, photos, photosMap) {
     ]
   }, null, 2);
 
-  const categoryLabel = { clasico: 'clásico', especial: 'especial', premium: 'premium' }[product.category] || '';
-  const metaTitle = `${product.name} a Domicilio en Cali | Desayunos Mañanitas`;
-  const metaDesc  = `${product.name}: ${descText}. Desayuno sorpresa ${categoryLabel} desde ${formatPrice(product.price)} + domicilio en Cali, Jamundí y Yumbo. ¡Pide ahora por WhatsApp!`;
-
   return `<!DOCTYPE html>
 <html lang="es-CO">
 <head>
@@ -224,7 +241,7 @@ function buildHTML(product, related, photos, photosMap) {
 <!-- SEO LOCAL CALI -->
 <title>${metaTitle}</title>
 <meta name="description" content="${metaDesc}">
-<meta name="keywords" content="${product.name}, desayunos a domicilio Cali, brunch Cali, desayunos sorpresa Cali, ${product.name} Cali, desayunos Jamundí, desayunos Yumbo">
+<meta name="keywords" content="${product.name}, desayunos a domicilio Cali, brunch Cali, desayunos sorpresa Cali, ${product.name} Cali, desayunos Jamundí, desayunos Candelaria, desayunos Ciudad del Campo">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="geo.region" content="CO-VAC">
 <meta name="geo.placename" content="Cali, Valle del Cauca, Colombia">
@@ -235,7 +252,7 @@ function buildHTML(product, related, photos, photosMap) {
 <meta property="og:title" content="${metaTitle}">
 <meta property="og:description" content="${metaDesc}">
 <meta property="og:url" content="${canonicalUrl}">
-<meta property="og:image" content="${BASE_URL}/img/logo-horizontal-rosado.png">
+<meta property="og:image" content="${productImage}">
 <meta property="og:image:alt" content="${product.name} - Desayunos Mañanitas Cali">
 <meta property="og:site_name" content="Desayunos Mañanitas">
 <meta property="og:locale" content="es_CO">
@@ -246,7 +263,7 @@ function buildHTML(product, related, photos, photosMap) {
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${metaTitle}">
 <meta name="twitter:description" content="${metaDesc}">
-<meta name="twitter:image" content="${BASE_URL}/img/logo-horizontal-rosado.png">
+<meta name="twitter:image" content="${productImage}">
 
 <!-- Schema.org Product -->
 <script type="application/ld+json">
