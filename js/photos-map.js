@@ -24,5 +24,9 @@ var PHOTOS_MAP = {
   "brunch-je-taime": "productos/brunch-je-taime/img/WhatsApp%20Image%202026-04-12%20at%202.08.18%20PM%20(1).jpeg",
   "brunch-kk": "productos/brunch-kk/img/WhatsApp%20Image%202026-04-12%20at%202.11.54%20PM.jpeg",
   "brunch-le-petit-tresor": "productos/brunch-le-petit-tresor/img/WhatsApp%20Image%202026-04-12%20at%203.19.40%20PM.jpeg",
-  "brunch-aventure-matinale": "productos/brunch-aventure-matinale/img/WhatsApp%20Image%202026-04-12%20at%203.35.48%20PM.jpeg"
+  "brunch-aventure-matinale": "productos/brunch-aventure-matinale/img/WhatsApp%20Image%202026-04-12%20at%203.35.48%20PM.jpeg",
+  "princesa-peach-dulce-galaxy": null,
+  "galaxy-girl-nivel-estrella": null,
+  "nivel-1-aventura-mario": null,
+  "power-up-bros-desayuno-pro": null
 };
