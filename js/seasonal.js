@@ -7,6 +7,19 @@
   // Los meses van de 0 (enero) a 11 (diciembre)
   const seasons = [
     {
+      id: 'dia-nino',
+      name: 'Día del Niño',
+      startMonth: 3, startDay: 10,
+      endMonth: 3, endDay: 25,
+      emoji: '🍄',
+      title: '🎮 Mario Bros Galaxy · Día del Niño 2026',
+      desc: 'Desayunos temáticos especiales para el 25 de abril. ¡Reserva el tuyo!',
+      ctaText: '⭐ Ver desayunos del Día del Niño',
+      ctaUrl: '#dia-nino',
+      gradient: 'linear-gradient(135deg, #0a0a3a, #1a1a6e, #2d2d9f)',
+      ctaColor: '#ffe066'
+    },
+    {
       id: 'san-valentin',
       name: 'San Valentín',
       startMonth: 0, startDay: 20,
