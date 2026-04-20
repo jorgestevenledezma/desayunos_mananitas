@@ -388,6 +388,11 @@ ${lightboxHTML}
   <div class="product-related-grid">
     ${relatedHTML}
   </div>
+  <div class="product-related-cta">
+    <a href="https://www.desayunosmananitas.com/#catalogo" class="related-catalog-btn">
+      ✨ Ver todo el catálogo
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->

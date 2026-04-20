@@ -498,6 +498,30 @@
   font-weight: 700;
 }
 
+.product-related-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+.related-catalog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-deep));
+  color: white;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(196,80,122,0.3);
+  transition: all 0.3s;
+}
+.related-catalog-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(196,80,122,0.4);
+}
+
 .product-related-grid {
   max-width: 960px;
   margin: 0 auto;
