@@ -563,7 +563,7 @@ const PRODUCTS = [
       'Mini dona',
       'Yogurt y hojuelas de maíz',
       'Fresones',
-      'Detalle Mario Bros (juguete)',
+      'Cajita de ganchitos y moñas',
       'Tarjeta y tag',
     ],
     decoration: 'Hermosa caja decorativa en papelería creativa alusiva a Mario Bros Galaxy.',
