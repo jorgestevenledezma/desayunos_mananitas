@@ -33,7 +33,7 @@ function formatPrice(n) {
 }
 
 function waLink(product) {
-  const text = encodeURIComponent(`Hola, estoy interesado en el ${product.name} (${formatPrice(product.price)})`);
+  const text = encodeURIComponent(`Hola, quiero más información sobre el ${product.name}`);
   return `https://wa.me/${WA_NUMBER}?text=${text}`;
 }
 
@@ -293,7 +293,7 @@ ${hasPhotos ? `<link rel="preload" href="img/${photos[0]}" as="image" fetchprior
       <li><a href="../../#envios">Envíos</a></li>
       <li><a href="../../#nosotros">Nosotros</a></li>
       <li><a href="../../#faq">Preguntas</a></li>
-      <li><a href="https://wa.me/${WA_NUMBER}?text=Hola%20%F0%9F%90%B0%20Quiero%20hacer%20un%20pedido" class="nav-cta" target="_blank" rel="noopener">🐰 Pedir Ahora</a></li>
+      <li><a href="https://wa.me/${WA_NUMBER}?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="nav-cta" target="_blank" rel="noopener">Pedir Ahora</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -409,7 +409,7 @@ ${lightboxHTML}
 </div>
 
 <!-- WhatsApp flotante -->
-<a href="https://wa.me/${WA_NUMBER}?text=Hola%20%F0%9F%90%B0%20Quiero%20informaci%C3%B3n" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">💬</a>
+<a href="https://wa.me/${WA_NUMBER}?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">💬</a>
 
 <script src="../../js/product-page.js"></script>
 </body>
