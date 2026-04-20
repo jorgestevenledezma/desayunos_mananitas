@@ -44,12 +44,24 @@ function waShareLink(product) {
   return `https://wa.me/?text=${text}`;
 }
 
+const DIA_NINO_IDS = [
+  'princesa-peach-dulce-galaxy',
+  'galaxy-girl-nivel-estrella',
+  'nivel-1-aventura-mario',
+  'power-up-bros-desayuno-pro',
+];
+
 function getRelated(product, all) {
-  // Prefiere misma categoría, distinto producto
+  // Productos de la edición Día del Niño: siempre recomiendan los otros 3 de la edición primero
+  if (DIA_NINO_IDS.includes(product.id)) {
+    const edicion = all.filter(p => p.id !== product.id && DIA_NINO_IDS.includes(p.id));
+    const resto   = all.filter(p => p.id !== product.id && !DIA_NINO_IDS.includes(p.id));
+    return [...edicion, ...resto].slice(0, 3);
+  }
+  // Resto: prefiere misma categoría, distinto producto
   const sameCat = all.filter(p => p.id !== product.id && p.category === product.category);
   const others  = all.filter(p => p.id !== product.id && p.category !== product.category);
   const pool    = [...sameCat, ...others];
-  // Shuffle determinístico basado en id
   const seed = product.id.charCodeAt(0);
   for (let i = pool.length - 1; i > 0; i--) {
     const j = (seed * (i + 1)) % (i + 1);
