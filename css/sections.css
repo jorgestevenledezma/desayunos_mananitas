@@ -86,20 +86,45 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: white;
-  padding: 14px 28px;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.6);
+  color: #fff !important;
+  padding: 12px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   flex-shrink: 0;
   white-space: nowrap;
+  backdrop-filter: blur(4px);
 }
 .seasonal-cta:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.seasonal-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+.seasonal-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+}
+.seasonal-dot.active {
+  background: rgba(255,255,255,0.95);
+  width: 20px;
+  border-radius: 4px;
 }
 .seasonal-close {
   position: absolute;
