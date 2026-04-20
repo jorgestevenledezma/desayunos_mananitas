@@ -4,7 +4,7 @@
 
 ## Qué hacemos
 
-Somos un servicio de desayunos sorpresa a domicilio en Cali (Colombia). Ofrecemos brunch artesanales con presentación premium para ocasiones especiales: cumpleaños, aniversarios, Día de la Madre, San Valentín, graduaciones y más.
+Somos un servicio de desayunos sorpresa a domicilio en Cali (Colombia). Ofrecemos brunch artesanales con presentación premium para ocasiones especiales: cumpleaños, aniversarios, Día de la Madre, Día del Niño, San Valentín, graduaciones y más.
 
 - Cobertura: Cali, Jamundí, Ciudad del Campo y Candelaria
 - Horario de entrega: 5:30 a.m. – 11:00 a.m. y 2:00 p.m. – 4:30 p.m.
@@ -13,7 +13,7 @@ Somos un servicio de desayunos sorpresa a domicilio en Cali (Colombia). Ofrecemo
 
 ## Catálogo de productos
 
-Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
+Ofrecemos 29 opciones de desayuno organizadas en tres categorías:
 
 ### Categoría Clásico (hasta $120.000 COP)
 - **Mini Brunch** ($75.000): Sándwich de croissant, bebida natural, parfait con yogurt, cupcake
@@ -23,6 +23,8 @@ Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
 - **Petit Brunch** ($100.000): Sándwich de croissant, parfait, brownie, cupcake decorado
 - **Brunch Capítulo de Amor** ($100.000): Croissant, parfait, bebida, brownie, cupcake
 - **Brunch Brisa de Ternura** ($110.000): Croissant, parfait, bebida, brownie, cupcake, galleta
+- **Princesa Peach: Dulce Galaxy** ($80.000): Perro infantil, mini dona, yogurt, fresones, cajita de ganchitos y moñas, tarjeta — Edición Día del Niño 2026
+- **Nivel 1: Aventura Mario** ($80.000): Perro infantil, mini dona, yogurt, fresones, detalle Mario Bros juguete, tarjeta — Edición Día del Niño 2026
 
 ### Categoría Especial ($120.000 – $230.000 COP)
 - **Royal Brunch** ($150.000): Croissant, parfait, brownie, crepes con fruta
@@ -31,6 +33,9 @@ Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
 - **Brunch Oliva** ($160.000): Croissant, parfait, bebida, brownie, waffle
 - **Brunch Mes Amies** ($195.000): Croissant, parfait, waffle, flores, brownie
 - **Brunch Chic** ($210.000): Croissant, parfait, waffle, flores, brownie, torta personal
+- **Brunch Aventure Matinale** ($150.000): Torre de waffles, bebida, mix de fruta, cupcake, gomitas, gelatina — desayuno infantil temático
+- **Galaxy Girl: Nivel Estrella** ($140.000): Perro infantil, waffles, galleta Mario Bros, bolsito de moñas, globo burbuja — Edición Día del Niño 2026
+- **Power Up Bros: Desayuno Pro** ($140.000): Perro infantil, waffles, galleta Mario Bros, Mario coleccionable, globo burbuja — Edición Día del Niño 2026
 
 ### Categoría Premium (más de $230.000 COP)
 - **Brunch Amélie** ($220.000): Croissant, parfait, waffle, flores, brownie, torta, prensa francesa
@@ -43,6 +48,14 @@ Ofrecemos 23 opciones de desayuno organizadas en tres categorías:
 - **Brunch Coquette** ($290.000): Mini torta coquette premium, alfajores, parfait, rosas, vino
 - **Brunch Je t'aime** ($320.000): Bagel artesanal, parfait, waffle, rosas, torta vintage, prensa francesa, vino
 - **Brunch Expreso de Amor** ($370.000): Charcutería premium, parfait, waffle, rosas, torta, vino, flores
+- **Brunch le Petit Trésor** ($290.000): Desayuno premium con decoración alusiva según la ocasión
+
+## Edición especial Día del Niño 2026
+
+El 25 de abril de 2026 celebramos el Día del Niño con la colección **Mario Bros Galaxy**. Cuatro desayunos temáticos, dos para niñas y dos para niños, con cajas decorativas en papelería creativa alusiva a Mario Bros, perro infantil, detalles sorpresa y globo burbuja.
+
+- Para niñas: Princesa Peach: Dulce Galaxy ($80.000) y Galaxy Girl: Nivel Estrella ($140.000)
+- Para niños: Nivel 1: Aventura Mario ($80.000) y Power Up Bros: Desayuno Pro ($140.000)
 
 ## Métodos de pago
 
@@ -50,7 +63,7 @@ Nequi, transferencia bancaria Bancolombia. El pago se confirma antes de preparar
 
 ## Preguntas frecuentes
 
-**¿Con cuánto tiempo de anticipación debo pedir?** Con al menos 24 horas. En temporadas altas (Día de la Madre, San Valentín) con 2-3 días.
+**¿Con cuánto tiempo de anticipación debo pedir?** Con al menos 24 horas. En temporadas altas (Día de la Madre, San Valentín, Día del Niño) con 2-3 días.
 
 **¿Se puede personalizar?** Sí. Se pueden agregar flores, chocolates, globos, pulseras artesanales, vinos o mensaje personalizado en la tarjeta.
 
@@ -58,10 +71,13 @@ Nequi, transferencia bancaria Bancolombia. El pago se confirma antes de preparar
 
 **¿Tienen opciones para personas con alergias?** Sí, contáctenos por WhatsApp con los detalles.
 
+**¿En qué horario entregan?** De 5:30 a.m. a 11:00 a.m. y de 2:00 p.m. a 4:30 p.m. Tú eliges la hora exacta.
+
 ## Páginas del sitio
 
 - [Inicio](https://www.desayunosmananitas.com/)
 - [Catálogo completo](https://www.desayunosmananitas.com/#catalogo)
+- [Día del Niño 2026](https://www.desayunosmananitas.com/#dia-nino)
 - [Envíos y cobertura](https://www.desayunosmananitas.com/#envios)
 - [Sobre nosotros](https://www.desayunosmananitas.com/#nosotros)
 - [Preguntas frecuentes](https://www.desayunosmananitas.com/#faq)
@@ -91,3 +107,9 @@ Nequi, transferencia bancaria Bancolombia. El pago se confirma antes de preparar
 - [Brunch Coquette](https://www.desayunosmananitas.com/productos/brunch-coquette/)
 - [Brunch Je t'aime](https://www.desayunosmananitas.com/productos/brunch-je-taime/)
 - [Brunch Expreso de Amor](https://www.desayunosmananitas.com/productos/brunch-kk/)
+- [Brunch le Petit Trésor](https://www.desayunosmananitas.com/productos/brunch-le-petit-tresor/)
+- [Brunch Aventure Matinale](https://www.desayunosmananitas.com/productos/brunch-aventure-matinale/)
+- [Princesa Peach: Dulce Galaxy](https://www.desayunosmananitas.com/productos/princesa-peach-dulce-galaxy/)
+- [Galaxy Girl: Nivel Estrella](https://www.desayunosmananitas.com/productos/galaxy-girl-nivel-estrella/)
+- [Nivel 1: Aventura Mario](https://www.desayunosmananitas.com/productos/nivel-1-aventura-mario/)
+- [Power Up Bros: Desayuno Pro](https://www.desayunosmananitas.com/productos/power-up-bros-desayuno-pro/)
