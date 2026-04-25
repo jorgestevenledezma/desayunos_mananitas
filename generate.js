@@ -174,7 +174,7 @@ function buildHTML(product, related, photos, photosMap) {
   // Schema.org Product + BreadcrumbList
   const categoryLabel = { clasico: 'clásico', especial: 'especial', premium: 'premium' }[product.category] || '';
   const metaTitle = `${product.name} a Domicilio en Cali | Desayunos Mañanitas`;
-  const metaDesc  = `${product.name}: ${descText}. Desayuno sorpresa ${categoryLabel} desde ${formatPrice(product.price)} + domicilio en Cali, Jamundí, Candelaria y Ciudad del Campo. ¡Pide ahora por WhatsApp!`;
+  const metaDesc  = `${product.name}: ${descText}. Desayuno sorpresa ${categoryLabel} desde ${formatPrice(product.price)} + domicilio en Cali, Jamundí, Yumbo, Candelaria y Ciudad del Campo. ¡Pide ahora por WhatsApp!`;
   const productImage = hasPhotos
     ? `${BASE_URL}/productos/${product.id}/img/${photos[0]}`
     : `${BASE_URL}/img/logo-horizontal-rosado.png`;
@@ -207,7 +207,7 @@ function buildHTML(product, related, photos, photosMap) {
       },
       "shippingDetails": {
         "@type": "OfferShippingDetails",
-        "shippingRate": { "@type": "MonetaryAmount", "currency": "COP", "minValue": 10000, "maxValue": 40000 },
+        "shippingRate": { "@type": "MonetaryAmount", "currency": "COP", "minValue": 12000, "maxValue": 40000 },
         "shippingDestination": {
           "@type": "DefinedRegion",
           "addressCountry": "CO",
