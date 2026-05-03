@@ -547,7 +547,6 @@ const PRODUCTS = [
     gradient: 'linear-gradient(135deg, #fce4ec, #f8bbd0)',
   },
 
-  // ── EDICIÓN DÍA DE LA MADRE 2026 · UN JARDÍN PARA ELLA ──
   {
     id: 'esencia-que-florece',
     active: true,
@@ -636,7 +635,6 @@ const PRODUCTS = [
     gradient: 'linear-gradient(135deg, #4a1942, #880e4f, #c2185b)',
   },
 
-  // ── EDICIÓN DÍA DEL NIÑO 2026 · MARIO BROS GALAXY (evento pasado) ──
   {
     id: 'princesa-peach-dulce-galaxy',
     active: true,
@@ -677,7 +675,6 @@ const PRODUCTS = [
       'Mini waffles con sirope de miel',
       'Detalle cajita estilo bolsito con moñas, ganchitos y cachitos',
       'Tarjeta y tag',
-      'Globo burbuja',
     ],
     decoration: 'Caja decorativa en madera con escenario en papelería creativa alusiva a Mario Bros Galaxy.',
     gradient: 'linear-gradient(135deg, #e8d5f5, #c084fc, #ffe066)',
@@ -723,11 +720,10 @@ const PRODUCTS = [
       'Mini waffles con sirope de miel',
       'Detalle: Mario Bros coleccionable o Luigi (el que esté disponible)',
       'Tarjeta y tag',
-      'Globo burbuja',
     ],
     decoration: 'Caja decorativa en madera con escenario en papelería creativa alusiva a Mario Bros Galaxy.',
     gradient: 'linear-gradient(135deg, #d4edda, #28a745, #e63946)',
-  },
+  }
 ];
 
 // Para uso en Node.js (generate.js)

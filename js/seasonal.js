@@ -20,7 +20,7 @@
       startMonth: 3, startDay: 9,
       endMonth: 4, endDay: null,
       emoji: '👩‍👧‍👦',
-      title: '¡Sorprende a Mamá este 11 de mayo!',
+      title: '¡Sorprende a Mamá este 10 de mayo!',
       desc: 'Tenemos desayunos especiales para ella. Reserva con tiempo y llegamos desde las 5:30 a.m.',
       ctaText: '💖 Ver desayunos para Mamá',
       ctaUrl: 'https://wa.me/573045236602?text=Hola%2C%20quiero%20pedir%20un%20desayuno%20para%20el%20D%C3%ADa%20de%20la%20Madre%20%F0%9F%92%96',
