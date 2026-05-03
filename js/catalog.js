@@ -34,16 +34,20 @@
       ? '<img src="' + photo + '" class="card-photo" alt="' + p.name + '" loading="lazy"><div class="card-photo-overlay"></div><div class="card-emoji card-emoji--photo">' + p.emoji + '</div>'
       : '<div class="card-gradient" style="background:' + p.gradient + '"></div><div class="card-emoji">' + p.emoji + '</div>';
 
+    // Productos waOnly (sin página propia): enlace directo a WhatsApp
+    var href   = p.waOnly ? waUrl(p) : 'productos/' + p.id + '/';
+    var tgtRel = p.waOnly ? ' target="_blank" rel="noopener"' : '';
+
     return [
       '<div class="product-card fade-up" data-category="' + p.category + '" data-price="' + p.price + '">',
         badge,
-        '<a href="productos/' + p.id + '/" style="text-decoration:none;display:block;">',
+        '<a href="' + href + '"' + tgtRel + ' style="text-decoration:none;display:block;">',
           '<div class="card-visual">',
             visualInner,
           '</div>',
         '</a>',
         '<div class="card-body">',
-          '<a href="productos/' + p.id + '/" style="text-decoration:none;">',
+          '<a href="' + href + '"' + tgtRel + ' style="text-decoration:none;">',
             '<h3 class="card-name">' + p.name + '</h3>',
           '</a>',
           '<div class="card-includes">' + items + '</div>',

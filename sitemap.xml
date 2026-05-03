@@ -7,7 +7,7 @@
   <!-- Página principal -->
   <url>
     <loc>https://www.desayunosmananitas.com/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -191,30 +191,59 @@
   <!-- Edición Día del Niño 2026 -->
   <url>
     <loc>https://www.desayunosmananitas.com/productos/princesa-peach-dulce-galaxy/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.desayunosmananitas.com/productos/galaxy-girl-nivel-estrella/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.desayunosmananitas.com/productos/nivel-1-aventura-mario/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.desayunosmananitas.com/productos/power-up-bros-desayuno-pro/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Edición Día de la Madre 2026 · Un Jardín Para Ella -->
+  <url>
+    <loc>https://www.desayunosmananitas.com/productos/esencia-que-florece/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.desayunosmananitas.com/productos/legado-que-florece/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.desayunosmananitas.com/productos/tu-amor-permanece/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.desayunosmananitas.com/productos/amor-eterno/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
 </urlset>
