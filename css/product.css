@@ -798,6 +798,7 @@
   overflow: hidden;
   background: var(--pink-pale);
   aspect-ratio: 4 / 3;
+  max-height: 420px;
   cursor: zoom-in;
   box-shadow: var(--shadow-card);
   margin-bottom: 16px;
