@@ -32,5 +32,8 @@ var PHOTOS_MAP = {
   "princesa-peach-dulce-galaxy": "productos/princesa-peach-dulce-galaxy/img/WhatsApp%20Image%202026-04-17%20at%205.22.59%20PM%20(1).jpeg",
   "galaxy-girl-nivel-estrella": "productos/galaxy-girl-nivel-estrella/img/WhatsApp%20Image%202026-04-17%20at%205.22.12%20PM.jpeg",
   "nivel-1-aventura-mario": "productos/nivel-1-aventura-mario/img/WhatsApp%20Image%202026-04-17%20at%205.24.45%20PM%20(1).jpeg",
-  "power-up-bros-desayuno-pro": "productos/power-up-bros-desayuno-pro/img/WhatsApp%20Image%202026-04-17%20at%205.25.14%20PM%20(1).jpeg"
+  "power-up-bros-desayuno-pro": "productos/power-up-bros-desayuno-pro/img/WhatsApp%20Image%202026-04-17%20at%205.25.14%20PM%20(1).jpeg",
+  "el-numero-10": "productos/el-numero-10/img/WhatsApp%20Image%202026-06-11%20at%209.57.22%20PM.jpeg",
+  "legado-de-campeon": "productos/legado-de-campeon/img/WhatsApp%20Image%202026-06-11%20at%209.59.09%20PM%20(1).jpeg",
+  "la-copa-del-honor": "productos/la-copa-del-honor/img/WhatsApp%20Image%202026-06-11%20at%2010.02.44%20PM.jpeg"
 };

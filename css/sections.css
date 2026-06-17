@@ -1168,3 +1168,176 @@ footer {
   .madre-cd-num    { font-size: 1.15rem; padding: 6px 10px; min-width: 42px; }
   .madre-card-name { font-size: 1.6rem; }
 }
+
+/* ===== PAPÁ ES MI CAMPEÓN · DÍA DEL PADRE 2026 ===== */
+.padre-section {
+  position: relative;
+  background: linear-gradient(170deg, #f0f4f8 0%, #e8eff5 45%, #edf2f7 100%);
+  overflow: hidden;
+  padding: 72px 24px 88px;
+}
+
+/* Elementos flotantes */
+.padre-floats {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.padre-floats span {
+  position: absolute;
+  font-size: 1.6rem;
+  opacity: 0.14;
+  animation: padrePetalFloat 7s ease-in-out infinite;
+}
+.padre-floats span:nth-child(1)  { left: 4%;  top: 10%; animation-delay: 0s; }
+.padre-floats span:nth-child(2)  { left: 14%; top: 68%; animation-delay: 1.2s; }
+.padre-floats span:nth-child(3)  { left: 26%; top: 22%; animation-delay: 2.1s; }
+.padre-floats span:nth-child(4)  { left: 40%; top: 80%; animation-delay: 0.5s; }
+.padre-floats span:nth-child(5)  { left: 54%; top: 8%;  animation-delay: 2.7s; }
+.padre-floats span:nth-child(6)  { left: 66%; top: 58%; animation-delay: 1.6s; }
+.padre-floats span:nth-child(7)  { left: 76%; top: 28%; animation-delay: 3.2s; }
+.padre-floats span:nth-child(8)  { left: 86%; top: 72%; animation-delay: 0.9s; }
+.padre-floats span:nth-child(9)  { left: 93%; top: 16%; animation-delay: 2s; }
+.padre-floats span:nth-child(10) { left: 48%; top: 45%; animation-delay: 3.8s; }
+@keyframes padrePetalFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1);        opacity: 0.14; }
+  40%       { transform: translateY(-22px) rotate(12deg) scale(1.12); opacity: 0.26; }
+  70%       { transform: translateY(-10px) rotate(-8deg) scale(0.94); opacity: 0.17; }
+}
+
+.padre-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Encabezado ── */
+.padre-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.padre-edition-tag {
+  display: inline-block;
+  background: rgba(26,58,92,0.08);
+  border: 1px solid rgba(26,58,92,0.25);
+  color: #1a3a5c;
+  padding: 6px 22px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+.padre-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.padre-title-accent { color: #1a3a5c; }
+.padre-dedicatoria {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-light);
+  max-width: 580px;
+  margin: 0 auto 32px;
+  line-height: 1.85;
+  font-style: italic;
+}
+
+/* ── Countdown ── */
+.padre-countdown-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.padre-countdown-label {
+  color: var(--text-light);
+  font-size: 0.88rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+.padre-countdown { display: flex; align-items: center; gap: 6px; }
+.padre-cd-item   { display: flex; flex-direction: column; align-items: center; }
+.padre-cd-num {
+  background: white;
+  border: 1px solid rgba(26,58,92,0.2);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a3a5c;
+  font-family: 'Quicksand', sans-serif;
+  min-width: 52px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 2px 12px rgba(26,58,92,0.08);
+}
+.padre-cd-lbl {
+  font-size: 0.6rem;
+  color: var(--text-light);
+  margin-top: 4px;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.padre-cd-sep {
+  font-size: 1.3rem;
+  color: #c9a96e;
+  font-weight: 700;
+  align-self: flex-start;
+  padding-top: 10px;
+}
+
+/* ── Grid de productos 3 columnas ── */
+.padre-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 52px;
+}
+
+/* ── CTA ── */
+.padre-cta-wrap { text-align: center; }
+.padre-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1a3a5c, #2d6094);
+  color: white;
+  padding: 17px 44px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 6px 28px rgba(26,58,92,0.38);
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
+}
+.padre-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 38px rgba(26,58,92,0.48);
+}
+.padre-cta-note {
+  margin-top: 14px;
+  color: var(--text-light);
+  font-size: 0.82rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .padre-section   { padding: 56px 16px 72px; }
+  .padre-products  { grid-template-columns: 1fr; gap: 20px; }
+  .padre-cd-num    { font-size: 1.15rem; padding: 6px 10px; min-width: 42px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .padre-products  { grid-template-columns: repeat(2, 1fr); }
+}

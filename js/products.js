@@ -723,7 +723,72 @@ const PRODUCTS = [
     ],
     decoration: 'Caja decorativa en madera con escenario en papelería creativa alusiva a Mario Bros Galaxy.',
     gradient: 'linear-gradient(135deg, #d4edda, #28a745, #e63946)',
-  }
+  },
+
+  // ── DÍA DEL PADRE 2026 ──────────────────────────────────────────────────────
+
+  {
+    id: 'el-numero-10',
+    active: true,
+    name: 'El Número 10',
+    price: 100000,
+    emoji: '⚽',
+    category: 'padre',
+    badge: '⚽ Día del Padre',
+    note: 'Edición especial Día del Padre 2026 — 21 de junio',
+    photos: [],
+    includes: [
+      'Tamal valluno con 2 arepas',
+      'Bebida natural',
+      'Manzana verde',
+      'Chocolate',
+      'Vaso Mug alusivo al Día del Padre',
+    ],
+    decoration: 'Caja decorativa edición Día del Padre, tarjeta y tag',
+    gradient: 'linear-gradient(135deg, #1a3a5c, #2d6094, #1565c0)',
+  },
+
+  {
+    id: 'legado-de-campeon',
+    active: true,
+    name: 'Legado de Campeón',
+    price: 170000,
+    emoji: '🏆',
+    category: 'padre',
+    badge: '🏆 Día del Padre',
+    note: 'Edición especial Día del Padre 2026 — 21 de junio',
+    photos: [],
+    includes: [
+      'Picada con costilla de cerdo, arepas, papa y tomate',
+      'Tablita con empanadas, chorizos y limón',
+      'Cerveza Coronita',
+      'Manzana verde',
+      'Vaso termo en acero inoxidable',
+    ],
+    decoration: 'Caja decorativa con mantelito, globo burbuja con sticker alusivo al Día del Padre, tarjeta y tag',
+    gradient: 'linear-gradient(135deg, #2d6a4f, #1b5e20, #33691e)',
+  },
+
+  {
+    id: 'la-copa-del-honor',
+    active: true,
+    name: 'La Copa del Honor',
+    price: 230000,
+    emoji: '🥇',
+    category: 'padre',
+    badge: '👑 Premium Papá',
+    note: 'Edición especial Día del Padre 2026 — 21 de junio',
+    photos: [],
+    includes: [
+      'Picada con costilla de cerdo, carne de res, arepas y papa',
+      'Bowl con jamón, queso Sabana de Alpina, uchuvas y uvas',
+      'Jugo natural',
+      'Cerveza Corona con destapador alusivo al Día del Padre',
+      'Vaso Termo en acero inoxidable',
+    ],
+    decoration: 'Caja decorativa con mantelito, globo burbuja y 3 globos en helio, tarjeta y tag',
+    gradient: 'linear-gradient(135deg, #5d4e08, #c9a96e, #b7950b)',
+  },
 ];
 
 // Para uso en Node.js (generate.js)
