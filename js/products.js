@@ -745,7 +745,7 @@ const PRODUCTS = [
       'Vaso Mug alusivo al Día del Padre',
     ],
     decoration: 'Caja decorativa edición Día del Padre, tarjeta y tag',
-    gradient: 'linear-gradient(135deg, #1a3a5c, #2d6094, #1565c0)',
+    gradient: 'linear-gradient(135deg, #3d4a18, #536428, #6b7a30)',
   },
 
   {
