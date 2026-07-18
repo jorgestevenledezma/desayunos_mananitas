@@ -1172,7 +1172,7 @@ footer {
 /* ===== PAPÁ ES MI CAMPEÓN · DÍA DEL PADRE 2026 ===== */
 .padre-section {
   position: relative;
-  background: linear-gradient(170deg, #f0f4f8 0%, #e8eff5 45%, #edf2f7 100%);
+  background: linear-gradient(170deg, #f4f6ef 0%, #edf2e4 45%, #f0f4eb 100%);
   overflow: hidden;
   padding: 72px 24px 88px;
 }
@@ -1220,9 +1220,9 @@ footer {
 }
 .padre-edition-tag {
   display: inline-block;
-  background: rgba(26,58,92,0.08);
-  border: 1px solid rgba(26,58,92,0.25);
-  color: #1a3a5c;
+  background: rgba(61,74,24,0.08);
+  border: 1px solid rgba(61,74,24,0.25);
+  color: #3d4a18;
   padding: 6px 22px;
   border-radius: 50px;
   font-size: 0.82rem;
@@ -1238,7 +1238,7 @@ footer {
   line-height: 1.1;
   margin-bottom: 16px;
 }
-.padre-title-accent { color: #1a3a5c; }
+.padre-title-accent { color: #3d4a18; }
 .padre-dedicatoria {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
@@ -1267,17 +1267,17 @@ footer {
 .padre-cd-item   { display: flex; flex-direction: column; align-items: center; }
 .padre-cd-num {
   background: white;
-  border: 1px solid rgba(26,58,92,0.2);
+  border: 1px solid rgba(61,74,24,0.2);
   border-radius: 10px;
   padding: 8px 14px;
   font-size: 1.5rem;
   font-weight: 800;
-  color: #1a3a5c;
+  color: #3d4a18;
   font-family: 'Quicksand', sans-serif;
   min-width: 52px;
   text-align: center;
   line-height: 1;
-  box-shadow: 0 2px 12px rgba(26,58,92,0.08);
+  box-shadow: 0 2px 12px rgba(61,74,24,0.08);
 }
 .padre-cd-lbl {
   font-size: 0.6rem;
@@ -1309,7 +1309,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #1a3a5c, #2d6094);
+  background: linear-gradient(135deg, #3d4a18, #536428);
   color: white;
   padding: 17px 44px;
   border-radius: 50px;
@@ -1317,13 +1317,13 @@ footer {
   font-weight: 800;
   font-size: 1rem;
   font-family: 'Quicksand', sans-serif;
-  box-shadow: 0 6px 28px rgba(26,58,92,0.38);
+  box-shadow: 0 6px 28px rgba(61,74,24,0.38);
   transition: all 0.3s;
   letter-spacing: 0.3px;
 }
 .padre-cta-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 38px rgba(26,58,92,0.48);
+  box-shadow: 0 12px 38px rgba(61,74,24,0.48);
 }
 .padre-cta-note {
   margin-top: 14px;
@@ -1342,124 +1342,3 @@ footer {
   .padre-products  { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ===== DÍA DE LOS AHIJADOS — TEASER ===== */
-@keyframes ahijadosFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
-  50%       { transform: translateY(-18px) rotate(8deg); opacity: 0.35; }
-}
-@keyframes ahijadosPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0.5); }
-  50%       { box-shadow: 0 0 0 8px rgba(201,169,110,0); }
-}
-
-.ahijados-teaser {
-  position: relative;
-  background: linear-gradient(135deg, #0d2e6e 0%, #1b4fa8 50%, #2d6eb5 100%);
-  padding: 64px 24px 72px;
-  text-align: center;
-  overflow: hidden;
-}
-
-.ahijados-teaser-floats {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.ahijados-teaser-floats span {
-  position: absolute;
-  font-size: 1.8rem;
-  animation: ahijadosFloat 5s ease-in-out infinite;
-  opacity: 0.15;
-}
-.ahijados-teaser-floats span:nth-child(1)  { top: 8%;  left: 5%;  animation-delay: 0s; }
-.ahijados-teaser-floats span:nth-child(2)  { top: 20%; left: 18%; animation-delay: 0.8s; }
-.ahijados-teaser-floats span:nth-child(3)  { top: 5%;  left: 35%; animation-delay: 1.4s; }
-.ahijados-teaser-floats span:nth-child(4)  { top: 15%; left: 55%; animation-delay: 0.4s; }
-.ahijados-teaser-floats span:nth-child(5)  { top: 8%;  left: 72%; animation-delay: 1.8s; }
-.ahijados-teaser-floats span:nth-child(6)  { top: 22%; left: 88%; animation-delay: 0.6s; }
-.ahijados-teaser-floats span:nth-child(7)  { top: 65%; left: 8%;  animation-delay: 1.2s; }
-.ahijados-teaser-floats span:nth-child(8)  { top: 75%; left: 30%; animation-delay: 2s; }
-.ahijados-teaser-floats span:nth-child(9)  { top: 70%; left: 60%; animation-delay: 0.3s; }
-.ahijados-teaser-floats span:nth-child(10) { top: 80%; left: 82%; animation-delay: 1.6s; }
-
-.ahijados-teaser-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.ahijados-teaser-badge {
-  display: inline-block;
-  background: #c9a96e;
-  color: #fff;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  padding: 6px 20px;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  animation: ahijadosPulse 2s ease-in-out infinite;
-}
-
-.ahijados-teaser-label {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.ahijados-teaser-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2.8rem, 7vw, 4.5rem);
-  color: #fff;
-  line-height: 1.1;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.ahijados-teaser-date {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  color: #c9a96e;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-bottom: 20px;
-}
-
-.ahijados-teaser-hint {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  color: rgba(255,255,255,0.8);
-  max-width: 480px;
-  margin: 0 auto 32px;
-  line-height: 1.6;
-}
-
-.ahijados-teaser-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #c9a96e;
-  color: #fff;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 32px;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 4px 20px rgba(201,169,110,0.4);
-}
-.ahijados-teaser-cta:hover {
-  background: #b8934e;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .ahijados-teaser { padding: 48px 16px 56px; }
-  .ahijados-teaser-title { font-size: 2.8rem; }
-}
