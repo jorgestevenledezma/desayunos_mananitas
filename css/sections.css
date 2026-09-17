@@ -1468,11 +1468,34 @@ footer {
   padding-top: 10px;
 }
 
+/* ── Galería ── */
+.amistad-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.amistad-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(164,19,60,0.14);
+  transition: transform 0.35s;
+}
+.amistad-gallery img:hover { transform: scale(1.03); }
+.amistad-gallery-hero {
+  grid-column: 1 / -1;
+  height: 380px !important;
+  border-radius: 22px !important;
+  box-shadow: 0 10px 40px rgba(164,19,60,0.2) !important;
+}
+
 /* ── Aviso "cualquier desayuno" ── */
 .amistad-note {
   text-align: center;
   max-width: 640px;
-  margin: -24px auto 40px;
+  margin: 0 auto 40px;
   background: rgba(164,19,60,0.06);
   border: 1px dashed rgba(164,19,60,0.3);
   border-radius: 16px;
@@ -1483,23 +1506,8 @@ footer {
   font-weight: 600;
 }
 
-/* ── Grid de productos 3 columnas ── */
-.amistad-products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-bottom: 52px;
-}
-
 /* ── CTA ── */
 .amistad-cta-wrap { text-align: center; }
-.amistad-cta-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
 .amistad-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -1520,17 +1528,6 @@ footer {
   transform: translateY(-3px);
   box-shadow: 0 12px 38px rgba(164,19,60,0.48);
 }
-.amistad-cta-btn--outline {
-  background: transparent;
-  color: #a4133c;
-  border: 2px solid rgba(164,19,60,0.4);
-  box-shadow: none;
-  padding: 15px 38px;
-}
-.amistad-cta-btn--outline:hover {
-  background: rgba(164,19,60,0.06);
-  box-shadow: none;
-}
 .amistad-cta-note {
   margin-top: 14px;
   color: var(--text-light);
@@ -1541,11 +1538,13 @@ footer {
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .amistad-section   { padding: 56px 16px 72px; }
-  .amistad-products  { grid-template-columns: 1fr; gap: 20px; }
+  .amistad-gallery   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .amistad-gallery img { height: 150px; }
+  .amistad-gallery-hero { height: 220px !important; }
   .amistad-cd-num    { font-size: 1.15rem; padding: 6px 10px; min-width: 42px; }
-  .amistad-note      { margin: -12px 8px 32px; }
+  .amistad-note      { margin: 0 8px 32px; }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  .amistad-products  { grid-template-columns: repeat(2, 1fr); }
+  .amistad-gallery img { height: 170px; }
 }
 
