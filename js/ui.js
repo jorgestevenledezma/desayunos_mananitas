@@ -41,7 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== CARRUSEL MÓVIL (features & steps) =====
+// ===== CARRUSEL MÓVIL (features) =====
 (function () {
   function initCarousel(gridId, dotsId, itemSelector) {
     var grid = document.getElementById(gridId);
@@ -81,14 +81,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       if (Math.abs(dx) > 40) goTo(current + (dx > 0 ? 1 : -1));
     }, { passive: true });
 
-    // Auto-avance cada 4s
-    var timer;
-    function startAuto() { timer = setInterval(function () { goTo(current + 1); }, 4000); }
-    function stopAuto()  { clearInterval(timer); }
+    // Auto-avance cada 5s (no se activa si el usuario prefiere menos movimiento).
+    // stopAuto() antes de cada inicio evita que los intervalos se acumulen.
+    var timer = null;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function stopAuto()  { clearInterval(timer); timer = null; }
+    function startAuto() {
+      stopAuto();
+      if (reduceMotion || !isMobile()) return;
+      timer = setInterval(function () { goTo(current + 1); }, 5000);
+    }
     grid.addEventListener('touchstart', stopAuto, { passive: true });
     grid.addEventListener('touchend',   startAuto, { passive: true });
 
     function setup() {
+      stopAuto();
       if (isMobile()) {
         buildDots();
         goTo(0);
@@ -101,15 +108,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     setup();
-    var resizeTimer;
+    // Solo reiniciar si cambia el ancho: en móvil la barra del navegador
+    // dispara 'resize' al hacer scroll y reiniciaba el carrusel.
+    var resizeTimer, lastWidth = window.innerWidth;
     window.addEventListener('resize', function () {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(setup, 150);
     });
   }
 
   initCarousel('featuresGrid', 'featuresDots', '.feature-item');
-  initCarousel('stepsGrid',    'stepsDots',    '.step-card');
 })();
 
 // ===== FAQ ACCORDION =====
