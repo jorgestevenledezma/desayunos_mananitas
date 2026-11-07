@@ -11,6 +11,7 @@ const PRODUCTS = require('./js/products.js');
 const rows = PRODUCTS.map(p => ({
   'ID (no cambiar)'   : p.id,
   'Activo'            : p.active === false ? 'NO' : 'SI',
+  'Visible hasta'     : p.until || '',
   'Nombre'            : p.name,
   'Precio'            : p.price,
   'Precio Alt'        : p.priceAlt || '',
@@ -38,6 +39,7 @@ const ws = XLSX.utils.json_to_sheet(rows);
 ws['!cols'] = [
   { wch: 32 },  // ID
   { wch: 8  },  // Activo
+  { wch: 14 },  // Visible hasta (AAAA-MM-DD)
   { wch: 28 },  // Nombre
   { wch: 12 },  // Precio
   { wch: 12 },  // Precio Alt

@@ -201,7 +201,7 @@
 .product-includes-title {
   font-family: 'Great Vibes', cursive;
   font-size: 1.6rem;
-  color: var(--pink-main);
+  color: var(--pink-deep);
   margin-bottom: 4px;
 }
 
@@ -285,8 +285,8 @@
 /* ===== NOTA ESPECIAL ===== */
 .product-note {
   background: linear-gradient(135deg, #fff3cd, #fff8e1);
-  border-left: 4px solid var(--gold);
-  border-radius: 0 12px 12px 0;
+  border: 1px solid var(--gold-light);
+  border-radius: 12px;
   padding: 14px 20px;
   font-size: 0.85rem;
   color: var(--text-body);
@@ -352,8 +352,8 @@
 }
 
 .share-icon-btn {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: white;
@@ -377,7 +377,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
   color: white;
   padding: 18px 24px;
   border-radius: 50px;
@@ -386,7 +386,7 @@
   font-weight: 700;
   font-size: 1.1rem;
   transition: all 0.3s;
-  box-shadow: 0 6px 25px rgba(37,211,102,0.35);
+  box-shadow: 0 6px 25px rgba(7,94,84,0.35);
   width: 100%;
   margin-bottom: 12px;
   letter-spacing: 0.3px;
@@ -394,13 +394,43 @@
 
 .btn-wa-product:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 35px rgba(37,211,102,0.5);
+  box-shadow: 0 10px 35px rgba(7,94,84,0.5);
 }
 
-.btn-wa-product .wa-icon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
+.btn-wa-product .wa-svg { width: 22px; height: 22px; }
+
+/* ===== ENTREGA Y PAGO (junto al botón de pedir) ===== */
+.product-delivery {
+  margin: 8px 0 16px;
+  padding: 16px 18px;
+  background: var(--pink-pale);
+  border-radius: 16px;
+  display: grid;
+  gap: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
+.product-delivery div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 8px;
+}
+.product-delivery dt {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.product-delivery dd { color: var(--text-body); }
+
+.product-season-note {
+  margin: 4px 0 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #fff3cd;
+  border: 1px solid var(--gold-light);
+  color: var(--text-dark);
+  font-size: 0.88rem;
+}
+.product-season-note[hidden] { display: none; }
 
 .btn-back-catalog {
   display: block;
@@ -409,7 +439,7 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--pink-deep);
+  color: var(--pink-ink);
   opacity: 0.75;
   transition: opacity 0.2s;
   padding: 4px 0;
@@ -460,11 +490,11 @@
 }
 
 .share-btn-wa {
-  background: #25D366;
+  background: var(--wa-green);
   color: white;
-  box-shadow: 0 3px 10px rgba(37,211,102,0.3);
+  box-shadow: 0 3px 10px rgba(7,94,84,0.3);
 }
-.share-btn-wa:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(37,211,102,0.4); }
+.share-btn-wa:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(7,94,84,0.4); }
 
 .share-btn-copy {
   background: white;
@@ -487,7 +517,7 @@
 .product-related-label {
   font-family: 'Great Vibes', cursive;
   font-size: 1.4rem;
-  color: var(--pink-main);
+  color: var(--pink-deep);
   margin-bottom: 4px;
 }
 
@@ -506,7 +536,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--pink-main), var(--pink-deep));
+  background: linear-gradient(135deg, var(--pink-ink), var(--pink-ink-dark));
   color: white;
   padding: 14px 36px;
   border-radius: 50px;
@@ -684,7 +714,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
   color: white;
   padding: 14px 20px;
   border-radius: 50px;
@@ -692,11 +722,11 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
-  box-shadow: 0 4px 15px rgba(37,211,102,0.35);
+  box-shadow: 0 4px 15px rgba(7,94,84,0.35);
   transition: all 0.3s;
 }
 
-.sticky-wa-btn:hover { box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
+.sticky-wa-btn:hover { box-shadow: 0 6px 20px rgba(7,94,84,0.45); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 767px) {
@@ -715,6 +745,11 @@
   .sticky-cta-bar {
     display: flex;
   }
+  /* La barra fija ya tiene el botón de WhatsApp: el flotante sobraría y la tapaba */
+  .whatsapp-float {
+    display: none;
+  }
+  .product-delivery div { grid-template-columns: 1fr; gap: 0; }
   .product-cta-panel {
     display: none;
   }
@@ -781,7 +816,7 @@
 .gallery-label {
   font-family: 'Great Vibes', cursive;
   font-size: 1.4rem;
-  color: var(--pink-main);
+  color: var(--pink-deep);
   margin-bottom: 4px;
 }
 .gallery-title {
@@ -1066,7 +1101,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
   color: white;
   padding: 16px 32px;
   border-radius: 50px;
@@ -1074,13 +1109,13 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
-  box-shadow: 0 6px 25px rgba(37,211,102,0.45);
+  box-shadow: 0 6px 25px rgba(7,94,84,0.45);
   transition: all 0.3s;
   margin-top: 16px;
 }
 .btn-wa-hero:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 35px rgba(37,211,102,0.55);
+  box-shadow: 0 10px 35px rgba(7,94,84,0.55);
 }
 
 /* Flechas sobre la foto */

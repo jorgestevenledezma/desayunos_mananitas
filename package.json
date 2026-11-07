@@ -4,7 +4,8 @@
   "description": "",
   "main": "generate.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "miniaturas": "node miniaturas.js",
+    "generar": "node generate.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/jorgestevenledezma/desayunos_mananitas/issues"
   },
-  "homepage": "https://github.com/jorgestevenledezma/desayunos_mananitas#readme"
+  "homepage": "https://github.com/jorgestevenledezma/desayunos_mananitas#readme",
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
 }
