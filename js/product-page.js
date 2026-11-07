@@ -92,8 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
   if (toggle && navLinks) {
     toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      toggle.classList.toggle('active');
+      const open = navLinks.classList.toggle('open');
+      toggle.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     });
   }
 
@@ -188,5 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   galleryMain && addSwipe(galleryMain, () => goTo(current + 1), () => goTo(current - 1));
   lightbox    && addSwipe(lightbox,    () => goTo(current + 1), () => goTo(current - 1));
+
+  // Edición de temporada terminada: muestra el aviso (la página se generó antes de la fecha)
+  document.querySelectorAll('.product-season-note[data-until]').forEach(el => {
+    if (new Date() > new Date(el.dataset.until + 'T23:59:59')) el.hidden = false;
+  });
 
 });

@@ -28,14 +28,38 @@ function scanPhotos(productId) {
     .map(f => encodeURIComponent(f).replace(/%20/g, '%20'));
 }
 
+/** Miniatura WebP (creada con `npm run miniaturas`) o, si no existe, la foto original */
+function thumbFor(productId, photo) {
+  const name = path.parse(decodeURIComponent(photo)).name + '.webp';
+  return fs.existsSync(path.join(OUTPUT_DIR, productId, 'img', 'thumb', name))
+    ? 'thumb/' + encodeURIComponent(name)
+    : photo;
+}
+
+/** ¿La edición de temporada ya terminó? (`until` = AAAA-MM-DD, incluido) */
+function isExpired(product) {
+  return Boolean(product.until) && new Date() > new Date(`${product.until}T23:59:59`);
+}
+
 function formatPrice(n) {
   return '$' + n.toLocaleString('es-CO');
 }
 
+// Mensaje con los datos que siempre hay que preguntar (igual que js/catalog.js)
 function waLink(product) {
-  const text = encodeURIComponent(`Hola, quiero más información sobre el ${product.name}`);
+  const text = encodeURIComponent(
+    `Hola, quiero pedir el ${product.name} (${formatPrice(product.price)} + domicilio).\n\n` +
+    'Fecha de entrega: \n' +
+    'Franja (5:30–11:00 a.m. o 2:00–4:30 p.m.): \n' +
+    'Barrio o municipio: \n' +
+    'Mensaje para la tarjeta: '
+  );
   return `https://wa.me/${WA_NUMBER}?text=${text}`;
 }
+
+const WA_INFO = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola, quiero más información sobre los desayunos')}`;
+
+const WA_SVG = '<svg class="wa-svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c.7.3 1.3.5 1.7.6a4.2 4.2 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.2-.6-.4zM12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.2 24l6.4-1.7a11.8 11.8 0 0 0 5.4 1.4h.1A11.8 11.8 0 0 0 20.5 3.5z"/></svg>';
 
 function waShareLink(product) {
   const text = encodeURIComponent(
@@ -51,7 +75,8 @@ const DIA_NINO_IDS = [
   'power-up-bros-desayuno-pro',
 ];
 
-function getRelated(product, all) {
+function getRelated(product, allProducts) {
+  const all = allProducts.filter(p => p.id === product.id || !isExpired(p));
   // Productos de la edición Día del Niño: siempre recomiendan los otros 3 de la edición primero
   if (DIA_NINO_IDS.includes(product.id)) {
     const edicion = all.filter(p => p.id !== product.id && DIA_NINO_IDS.includes(p.id));
@@ -101,7 +126,7 @@ function buildHTML(product, related, photos, photosMap) {
     </div>
     ${product.priceAlt ? `<p class="product-hero-price-alt">Sin libro de citas: ${formatPrice(product.priceAlt)}</p>` : ''}
     <a href="${waLink(product)}" class="btn-wa-hero" target="_blank" rel="noopener">
-      💬 Pedir por WhatsApp
+      ${WA_SVG} Pedir por WhatsApp
     </a>
   </div>
 </section>` :
@@ -132,7 +157,7 @@ function buildHTML(product, related, photos, photosMap) {
   <div class="lightbox-overlay" id="lightboxOverlay"></div>
   <div class="lightbox-content">
     <button class="lightbox-close" id="lightboxClose">✕</button>
-    <img src="" alt="${product.name}" class="lightbox-img" id="lightboxImg">
+    <img alt="${product.name}" class="lightbox-img" id="lightboxImg">
     ${photos.length > 1 ? `
     <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
     <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>` : ''}
@@ -149,7 +174,7 @@ function buildHTML(product, related, photos, photosMap) {
     const previewItems = r.includes.slice(0, 2).join(' · ');
     const rPhoto = photosMap[r.id];
     const rVisual = rPhoto
-      ? `<img src="../../${rPhoto}" alt="${r.name}" class="related-card-photo" loading="lazy"><div class="related-card-photo-overlay"></div><span class="related-card-emoji related-card-emoji--photo">${r.emoji}</span>`
+      ? `<img src="../../${rPhoto}" alt="${r.name}" class="related-card-photo" loading="lazy" decoding="async"><div class="related-card-photo-overlay"></div>`
       : `<span class="related-card-emoji">${r.emoji}</span>`;
     return `
     <a href="../../productos/${r.id}/" class="related-card fade-related">
@@ -171,6 +196,20 @@ function buildHTML(product, related, photos, photosMap) {
     ? `<div class="product-note">📌 ${product.note}</div>`
     : '';
 
+  // Edición de temporada: product-page.js muestra el aviso cuando pasa la fecha
+  const seasonHTML = product.until
+    ? `<p class="product-season-note" data-until="${product.until}" ${isExpired(product) ? '' : 'hidden'}>Esta edición de temporada ya terminó. Escríbenos y te contamos si podemos prepararla o te recomendamos una opción parecida.</p>`
+    : '';
+
+  // Datos de entrega y pago junto al botón, donde se decide la compra (mismos del home)
+  const deliveryHTML = `
+          <dl class="product-delivery">
+            <div><dt>Entregas</dt><dd>5:30–11:00 a.m. y 2:00–4:30 p.m.</dd></div>
+            <div><dt>Domicilio</dt><dd>Cali $12.000 · Ciudad del Campo $20.000 · Jamundí $30.000 · Yumbo $35.000 · Candelaria $40.000</dd></div>
+            <div><dt>Anticipación</dt><dd>Pide con 24 horas; en temporada alta, con 2 o 3 días.</dd></div>
+            <div><dt>Pago</dt><dd>Nequi o transferencia Bancolombia, antes de preparar el pedido.</dd></div>
+          </dl>`;
+
   // Schema.org Product + BreadcrumbList
   const categoryLabel = { clasico: 'clásico', especial: 'especial', premium: 'premium' }[product.category] || '';
   const metaTitle = `${product.name} a Domicilio en Cali | Desayunos Mañanitas`;
@@ -191,7 +230,7 @@ function buildHTML(product, related, photos, photosMap) {
       "@type": "Offer",
       "price": product.price,
       "priceCurrency": "COP",
-      "availability": "https://schema.org/InStock",
+      "availability": isExpired(product) ? "https://schema.org/Discontinued" : "https://schema.org/InStock",
       "url": canonicalUrl,
       "priceValidUntil": `${new Date().getFullYear() + 1}-12-31`,
       "seller": {
@@ -324,7 +363,7 @@ ${hasPhotos ? `<link rel="preload" href="img/${photos[0]}" as="image" fetchprior
       <li><a href="../../#faq">Preguntas</a></li>
       <li><a href="https://wa.me/${WA_NUMBER}?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="nav-cta" target="_blank" rel="noopener">Pedir Ahora</a></li>
     </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -369,7 +408,7 @@ ${lightboxHTML}
           <div class="gallery-thumbs">
             ${photos.map((p, i) => `
             <button class="gallery-thumb ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="Foto ${i + 1}">
-              <img src="img/${p}" alt="${product.name} foto ${i + 1}" loading="lazy">
+              <img src="img/${thumbFor(product.id, p)}" alt="${product.name} foto ${i + 1}" loading="lazy" decoding="async">
             </button>`).join('')}
           </div>` : ''}
         </div>` : ''}
@@ -377,9 +416,11 @@ ${lightboxHTML}
         <!-- Acción: un solo botón + compartir compacto -->
         <div class="product-action-panel">
           <a href="${waLink(product)}" class="btn-wa-product" target="_blank" rel="noopener">
-            <span class="wa-icon">💬</span>
+            ${WA_SVG}
             Pedir por WhatsApp
           </a>
+          ${seasonHTML}
+          ${deliveryHTML}
           <a href="../../#catalogo" class="btn-back-catalog">
             ← Ver todos los desayunos
           </a>
@@ -424,7 +465,7 @@ ${lightboxHTML}
       <a href="../../#faq">Preguntas</a>
     </div>
     <div class="footer-social">
-      <a href="https://wa.me/${WA_NUMBER}" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+      <a href="${WA_INFO}" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
       <a href="https://www.instagram.com/desayunosmananitasoficial" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
     </div>
     <div class="footer-copy">© ${new Date().getFullYear()} Desayunos Mañanitas · Cali, Valle del Cauca · Tel: (304) 523-6602</div>
@@ -438,12 +479,12 @@ ${lightboxHTML}
     <span class="sticky-price-note">+ domicilio</span>
   </div>
   <a href="${waLink(product)}" class="sticky-wa-btn" target="_blank" rel="noopener">
-    💬 Pedir por WhatsApp
+    ${WA_SVG} Pedir por WhatsApp
   </a>
 </div>
 
 <!-- WhatsApp flotante -->
-<a href="https://wa.me/${WA_NUMBER}?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat por WhatsApp">💬</a>
+<a href="${WA_INFO}" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">${WA_SVG}</a>
 
 <script src="../../js/product-page.js"></script>
 </body>
@@ -465,7 +506,7 @@ const photosMap = {};
 activeProducts.forEach(product => {
   const photos = scanPhotos(product.id);
   photosMap[product.id] = photos.length > 0
-    ? `productos/${product.id}/img/${photos[0]}`
+    ? `productos/${product.id}/img/${thumbFor(product.id, photos[0])}`
     : null;
 });
 

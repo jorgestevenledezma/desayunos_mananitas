@@ -42,6 +42,16 @@ function slugify(text) {
     .replace(/-+/g, '-');                              // guiones dobles → uno
 }
 
+// Excel puede guardar la fecha como número de serie: lo pasamos a AAAA-MM-DD
+function isoDate(val) {
+  if (!val) return null;
+  if (/^\d+(\.\d+)?$/.test(val)) {
+    const d = XLSX.SSF.parse_date_code(Number(val));
+    return `${d.y}-${String(d.m).padStart(2, '0')}-${String(d.d).padStart(2, '0')}`;
+  }
+  return val;
+}
+
 function buildIncludes(row) {
   return [1,2,3,4,5,6,7]
     .map(n => col(row, `Incluye ${n}`))
@@ -54,6 +64,7 @@ const PRODUCTS = rows.map(row => {
   const p = {
     id         : col(row, 'ID (no cambiar)') || slugify(name),
     active     : activoVal === null || activoVal.toUpperCase() !== 'NO',
+    until      : isoDate(col(row, 'Visible hasta')), // AAAA-MM-DD: después de esa fecha sale del catálogo
     name       : name,
     price      : Number(col(row, 'Precio')) || 0,
     emoji      : col(row, 'Emoji') || '🍳',
@@ -108,7 +119,7 @@ const lines = PRODUCTS.map(p => {
   const includes = p.includes.map(i => `      '${esc(i)}'`).join(',\n');
   return `  {
     id: '${esc(p.id)}',
-    active: ${p.active},
+    active: ${p.active},${p.until ? `\n    until: '${esc(p.until)}',` : ''}
     name: '${esc(p.name)}',
     price: ${p.price},${extras}
     emoji: '${esc(p.emoji)}',

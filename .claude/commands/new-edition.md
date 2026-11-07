@@ -62,11 +62,13 @@ Estructura:
 </section>
 ```
 
-Seguir exactamente el patrón de `.padre-section` (en index.html, líneas ~494-620).
+Seguir exactamente el patrón de `.padre-section` en `plantillas/edicion-temporada.html`.
+Agregar en el `<head>` de index.html `<link rel="stylesheet" href="css/ediciones.css">` mientras haya una edición activa,
+y en `js/products.js` el campo `until: 'AAAA-MM-DD'` a cada producto de la edición (sale solo del catálogo después).
 
-## Paso 7 — Agregar estilos en css/sections.css
+## Paso 7 — Agregar estilos en css/ediciones.css
 
-Copiar el bloque `/* ===== PAPÁ ES MI CAMPEÓN ===== */` al final de sections.css y adaptar:
+Copiar el bloque `/* ===== PAPÁ ES MI CAMPEÓN ===== */` al final de css/ediciones.css y adaptar:
 - Nombre de clases: `.padre-` → `.[evento]-`
 - Colores del `.padre-edition-tag`, `.padre-title-accent`, `.padre-cd-num`, `.padre-cta-btn`
 - Gradiente del fondo de `.padre-section`
@@ -80,7 +82,7 @@ Copiar el bloque `/* ===== PAPÁ ES MI CAMPEÓN ===== */` al final de sections.c
 
 ## Paso 9 — Agregar countdown JS
 
-Al final del body de index.html, copiar el bloque del countdown del Día del Padre y adaptar:
+Al final del body de index.html, copiar el bloque del countdown de `plantillas/edicion-temporada.html` y adaptar:
 - `target` → nueva fecha
 - IDs de los elementos: `[evento]Countdown`, `[e]cd-days`, etc.
 - Mensaje cuando llega el día
@@ -89,3 +91,8 @@ Al final del body de index.html, copiar el bloque del countdown del Día del Pad
 ## Paso 10 — Actualizar llms.txt
 
 Agregar la nueva edición en la sección correspondiente y los nuevos productos.
+
+## Al terminar la edición
+
+Quitar la sección y su countdown de index.html, el link del navbar y, si no queda otra edición activa,
+el `<link>` a `css/ediciones.css`. Los productos con `until` ya salieron solos del catálogo.

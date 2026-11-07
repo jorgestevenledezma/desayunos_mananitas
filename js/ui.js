@@ -5,16 +5,39 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== MOBILE MENU =====
-document.getElementById('mobileToggle').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
+const menuToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+
+function setMenu(open) {
+  navLinks.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+}
+
+menuToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+
+// Cierra el menú al elegir un enlace o con Escape
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => setMenu(false));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    setMenu(false);
+    menuToggle.focus();
+  }
 });
 
-// Close mobile menu on link click
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('open');
+// ===== VOLVER ARRIBA =====
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    backToTop.hidden = window.scrollY < window.innerHeight * 2;
+  }, { passive: true });
+  backToTop.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-});
+}
 
 // ===== INTERSECTION OBSERVER (fade-up animations) =====
 const observer = new IntersectionObserver((entries) => {

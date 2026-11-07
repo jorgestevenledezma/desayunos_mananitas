@@ -72,14 +72,8 @@
 /* ===== INSTAGRAM MOBILE ===== */
 @media (max-width: 768px) {
   .instagram-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-  .insta-content p {
-    display: none;
-  }
-  .insta-content .insta-emoji {
-    font-size: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
 
@@ -98,13 +92,93 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border-radius: 0 0 var(--radius) var(--radius);
   }
-  .catalog-grid {
+  .nav-links.open {
+    gap: 4px;
+  }
+  .nav-links.open a {
+    display: block;
+    padding: 12px 4px;
+  }
+  .nav-links.open .nav-cta {
+    text-align: center;
+    margin-top: 8px;
+    padding: 14px 24px;
+  }
+
+  /* ── Portada: foto arriba, texto centrado ── */
+  .hero {
+    min-height: 0;
+    padding: 104px 16px 56px;
+  }
+  .hero-inner {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
-  .hero-logo {
-    width: 180px; height: 180px;
+  .hero-photo {
+    order: -1;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
   }
-  .card-visual { height: 140px; }
+  .hero-content { text-align: center; }
+  .hero-promise {
+    width: fit-content;
+    margin: 0 auto 24px;
+    text-align: left;
+  }
+  .hero-promise li { font-size: 0.95rem; }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-buttons .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Catálogo: 2 columnas de tarjetas compactas ── */
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .card-body { padding: 12px 12px 14px; }
+
+  /* Ocasiones: 2 columnas compactas */
+  .occasions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .occasion-card { padding: 20px 12px; }
+  .occasion-emoji { font-size: 2.2rem; margin-bottom: 8px; }
+  .occasion-title { font-size: 1rem; margin-bottom: 6px; }
+  .occasion-desc { display: none; }
+  .occasion-cta { font-size: 0.82rem; }
+  .card-name { font-size: 0.98rem; margin-bottom: 8px; }
+  .card-summary { display: none; }
+  .card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .card-price { font-size: 1.2rem; }
+  .card-order { width: 100%; }
+  .card-badge {
+    top: 8px; left: 8px;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+  .catalog-filters { gap: 8px; }
+  .filter-category { gap: 8px; }
+  .filter-btn { padding: 8px 14px; font-size: 0.85rem; }
+
+  .whatsapp-float {
+    width: 56px; height: 56px;
+    bottom: 16px; right: 16px;
+  }
+  .back-to-top {
+    bottom: 84px;
+    right: 20px;
+    width: 44px; height: 44px;
+  }
 
   /* ── Carrusel móvil: features ── */
   .features-grid {
